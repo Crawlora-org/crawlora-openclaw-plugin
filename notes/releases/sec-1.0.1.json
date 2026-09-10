@@ -27,5 +27,16 @@
       "status": "clean",
       "summary": "TruffleHog found no verified secrets in the staged publish artifact."
     }
-  }
+  },
+  "publicInstallVerified": true,
+  "registeredToolCount": 7,
+  "downloadDigestVerified": true,
+  "sensitiveApiKeyVerified": true,
+  "publicValidationSummary": {
+    "errorCount": 0.0,
+    "findingCount": 0.0,
+    "incompatibleAfterOpenClawVersion": null,
+    "warningCount": 0.0
+  },
+  "githubRelease": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/tag/sec-v1.0.1"
 }
