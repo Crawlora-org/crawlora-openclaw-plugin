@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/amazon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Amazon product search and product details through Crawlora.",
   "type": "module",
   "main": "./dist/index.js",

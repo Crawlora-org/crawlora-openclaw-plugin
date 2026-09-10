@@ -2,7 +2,7 @@
   "id": "crawlora-amazon",
   "name": "Amazon by Crawlora",
   "description": "Amazon product search and product details through Crawlora.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "configSchema": {
     "type": "object",
     "properties": {
@@ -21,13 +21,14 @@
       "crawlora_amazon_product"
     ]
   },
-  "categories": [
-    "web"
-  ],
-  "uiHints": {
-    "apiKey": {
-      "label": "Crawlora API key",
-      "sensitive": true
+  "configContracts": {
+    "secretInputs": {
+      "paths": [
+        {
+          "path": "apiKey",
+          "expected": "string"
+        }
+      ]
     }
   }
 }
