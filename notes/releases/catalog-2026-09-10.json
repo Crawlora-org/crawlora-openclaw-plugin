@@ -10,7 +10,7 @@
     "tests": "405 passing",
     "openclawValidation": "111 packages valid on OpenClaw 2026.9.3",
     "clawhubInspector": "83 new packages clean: 0 errors, 0 warnings",
-    "registryVisibility": "82 new packages visible immediately; Foodpanda remained moderation-pending at receipt time",
+    "registryVisibility": "All 83 new packages visible with clean moderation status",
     "source": "https://github.com/Crawlora-org/crawlora-openclaw-plugin"
   }
 }
