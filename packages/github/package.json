@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/github",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitHub repository search through Crawlora.",
   "type": "module",
   "main": "./dist/index.js",
