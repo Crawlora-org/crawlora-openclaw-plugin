@@ -1,0 +1,132 @@
+# Crawlora for OpenClaw
+
+Give your OpenClaw agent 23 tools for live structured web data: search, product research, maps, transcripts, finance, SEC filings, and company hiring.
+
+This is a native OpenClaw **tool plugin**, backed by the official [`@crawlora-org/sdk`](https://www.npmjs.com/package/@crawlora-org/sdk). Scraping runs on Crawlora's hosted service. You need a [Crawlora account and API key](https://crawlora.net); API requests consume your account's credits and rate limits. The plugin itself is MIT-licensed.
+
+## Install
+
+Requires **OpenClaw 2026.9.3** and **Node >=24.16.0 <25 or >=26.1.0**. This initial release declares the exact OpenClaw version tested; broader compatibility will be added after testing.
+
+```sh
+openclaw plugins install clawhub:@crawlora-org/openclaw-plugin
+```
+
+Add the following to your existing OpenClaw configuration, merging the `plugins` fields:
+
+```json
+{
+  "plugins": {
+    "entries": {
+      "crawlora": {
+        "enabled": true,
+        "config": { "apiKey": "${CRAWLORA_API_KEY}" }
+      }
+    }
+  }
+}
+```
+
+Set `CRAWLORA_API_KEY` in the environment of the process running your OpenClaw Gateway, then restart it. Alternatively, set `apiKey` in the plugin config directly. Plugin config takes precedence over the environment; the field is marked sensitive in OpenClaw's configuration UI.
+
+If you use a plugin allowlist, add `crawlora` to the existing `plugins.allow` array. Keep any other entries. If you restrict agent tools, also allow this plugin's tools using your existing tool policy.
+
+Verify registration:
+
+```sh
+openclaw plugins inspect crawlora --runtime --json
+```
+
+Try asking:
+
+- “Search Google for recent battery recycling research.”
+- “Find coffee shops in San Francisco using Crawlora.”
+- “Get Apple's annual SEC financials and recent filings.”
+- “Search Amazon for noise cancelling headphones.”
+- “Show Stripe's public Greenhouse jobs.”
+
+## Tools
+
+All tool names start with `crawlora_` to avoid collisions with core tools or MCP integrations. This is a curated adapter, not the full Crawlora endpoint catalog. For the full catalog, connect the [hosted Crawlora MCP server](https://github.com/Crawlora-org/crawlora-openclaw-skill).
+
+| Tool | Purpose |
+| --- | --- |
+| `crawlora_google_search` | Search Google and return organic results. |
+| `crawlora_google_news` | Search Google News and return news results. |
+| `crawlora_google_videos` | Search Google Videos and return video results. |
+| `crawlora_bing_search` | Search Bing and return organic results. |
+| `crawlora_amazon_search` | Search Amazon for products. |
+| `crawlora_amazon_product` | Fetch a single Amazon product by ASIN. |
+| `crawlora_ebay_search` | Search eBay listings. |
+| `crawlora_youtube_transcript` | Fetch the transcript of a YouTube video. |
+| `crawlora_yahoo_finance_ticker_quote` | Get a Yahoo Finance quote for a ticker. |
+| `crawlora_sec_company_search` | Resolve a ticker or company name to SEC EDGAR companies (CIK, ticker, name). |
+| `crawlora_sec_company_intelligence` | A company 360 from SEC data: profile, latest financial snapshot, latest 10-K/10-Q/8-K, and recent events. |
+| `crawlora_sec_financials` | Normalized SEC financial statements (income, balance sheet, or cash flow) with computed margins and ratios. |
+| `crawlora_sec_filings` | List a company SEC EDGAR filings, filtered by form type and date. |
+| `crawlora_sec_filing_sections` | Extract 10-K/10-Q/8-K item sections (Risk Factors, MD&A, etc.) from a filing as clean text. |
+| `crawlora_sec_full_text_search` | Full-text search across SEC EDGAR filings, filtered by form and date. |
+| `crawlora_sec_insider` | Recent insider transactions (Forms 3/4/5) for a company. |
+| `crawlora_jobs_hiring_signals` | Aggregate a company's ATS job board into hiring signals: total open roles, department/location breakdowns, remote share, and how many roles are new in the last 7/30 days. |
+| `crawlora_jobs_company_search` | Find which ATS (Greenhouse, Lever, Ashby, SmartRecruiters) a company uses from its careers slug, with open-role counts. |
+| `crawlora_jobs_greenhouse_board` | List a company's public Greenhouse job board postings, normalized to a shared Job shape. |
+| `crawlora_jobs_lever_postings` | List a company's public Lever job postings, normalized. |
+| `crawlora_jobs_ashby_board` | List an organization's public Ashby job board postings, normalized. |
+| `crawlora_google_trends_explore` | Explore Google Trends interest for a query. |
+| `crawlora_google_map_search` | Search Google Maps for places. |
+
+### Parameter details
+
+- Google search takes `q` and optional `num` (10–100); uses US/English results.
+- Google News, Google Videos, and Bing take `q` and optional `count` (1–50).
+- SEC company tools require `ticker` or `cik`. `crawlora_sec_financials` accepts `statement`: `income`, `balance`, `cash_flow`; `period`: `annual`, `quarterly`; and `limit`: 1–20. Filings allow 1–500, insider transactions 1–30.
+- Hiring signals supports the curated providers `greenhouse` (`token`), `lever` (`company`), `ashby` (`org`), `smartrecruiters` (`company`), and `workday` (`tenant`, `datacenter`, `site`). More providers exist in Crawlora's full API.
+- Greenhouse `token` means a **public board slug**, not an authentication token.
+- The YouTube tool requests the API's default JSON transcript. Availability depends on the video and upstream captions.
+- Google Trends uses the API defaults for geography and time window.
+
+## Behavior and data handling
+
+Tools return `{ "data": ... }`, preserving the SDK response inside `data`. This avoids interpreting domain-specific `status` fields as OpenClaw execution status. Scraped content is external data and must not be treated as agent instructions.
+
+Requests go only to `https://api.crawlora.net/api/v1`; `CRAWLORA_BASE_URL` is deliberately ignored. Each call uses the current API key, a 60-second timeout, and the active tool's cancellation signal. Automatic retries are disabled to avoid repeating credit-consuming calls. HTTP failures become short, actionable tool errors; raw upstream error bodies, headers, and API keys are not included.
+
+The plugin has no shell execution, local file access, background jobs, or telemetry. Tool parameters and the API key are transmitted to Crawlora to fulfill requests. The API key is supplied in the `x-api-key` header, never a tool parameter.
+
+## Development
+
+```sh
+npm ci
+npm run plugin:validate
+npm test
+npm pack --pack-destination /tmp
+openclaw plugins install npm-pack:/tmp/crawlora-org-openclaw-plugin-1.0.0.tgz
+openclaw plugins inspect crawlora --runtime --json
+```
+
+`plugin:build` compiles TypeScript, generates `openclaw.plugin.json`, and adds catalog/UI metadata. The package ships built JavaScript and the manifest. Tests use the real OpenClaw registration helper and published Crawlora SDK with mocked HTTP to verify every tool's URL, method, body, and authentication, plus cancellation, configuration changes, and failure handling.
+
+Optional live smoke test, using your own account credits:
+
+```sh
+CRAWLORA_API_KEY=... npm run test:live
+```
+
+## Release
+
+From a clean committed checkout:
+
+```sh
+npm ci
+npm run plugin:validate
+npm test
+clawhub package validate . --openclaw-version 2026.9.3
+clawhub package publish . --owner crawlora-org --dry-run
+clawhub package publish . --owner crawlora-org --wait
+```
+
+ClawHub's security checks must finish before a release is publicly installable. Publish credentials stay outside this repository.
+
+## License
+
+[MIT](LICENSE). Copyright 2026 Crawlora.
