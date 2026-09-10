@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-10",
+  "commit": "918ce4d",
+  "catalogSource": "scripts/platforms.mjs autoCatalogThird",
+  "newPackageCount": 20,
+  "totalPackageCount": 202,
+  "totalToolCount": 214,
+  "scope": "Additional 7NOW, Accor, Apple, BigCommerce, apparel, Congress, PitchBook, food, retail, and sports families. Taco Bell and Tesla/TES job adapters were retained from earlier clean releases.",
+  "verification": {
+    "tests": "678 passing",
+    "openclawValidation": "202 packages valid on OpenClaw 2026.9.3",
+    "clawhubInspector": "20 new packages clean: 0 errors, 0 warnings; retained packages also clean",
+    "registryVisibility": "All 23 catalog packages visible with clean moderation status",
+    "source": "https://github.com/Crawlora-org/crawlora-openclaw-plugin"
+  }
+}
