@@ -44,7 +44,9 @@
       "registeredTools": [
         "crawlora_youtube_transcript"
       ],
-      "downloadDigestVerified": true
+      "downloadDigestVerified": true,
+      "githubArtifact": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/download/platforms-v1.0.0/youtube-public-1.0.0.tgz",
+      "githubDigestVerified": true
     },
     {
       "name": "@crawlora-org/google",
@@ -73,7 +75,9 @@
         "crawlora_google_trends_explore",
         "crawlora_google_map_search"
       ],
-      "downloadDigestVerified": true
+      "downloadDigestVerified": true,
+      "githubArtifact": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/download/platforms-v1.0.0/google-public-1.0.0.tgz",
+      "githubDigestVerified": true
     },
     {
       "name": "@crawlora-org/sec",
@@ -104,7 +108,10 @@
         "crawlora_sec_full_text_search",
         "crawlora_sec_insider"
       ],
-      "downloadDigestVerified": true
+      "downloadDigestVerified": true,
+      "githubArtifact": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/download/platforms-v1.0.0/sec-public-1.0.0.tgz",
+      "githubDigestVerified": true
     }
-  ]
+  ],
+  "githubRelease": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/tag/platforms-v1.0.0"
 }
