@@ -7,7 +7,19 @@
       "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/amazon",
       "releaseId": "rd7348ts6631g6csshchs74dz58e5n9v",
       "attemptId": "zx7258gy3h2p15jh09b4nva5j18e4vf8",
-      "publicationStatus": "pending"
+      "publicationStatus": "pending",
+      "artifactSha256": "1a2d474bed2afaa192c8cc6b8d9b604e70bc36d9eacfb5b357cedd38fadd4f49",
+      "checks": {
+        "clawscan": {
+          "status": "failed",
+          "summary": "ClawScan judge status was failed: Judge artifact inspection did not include required file artifact/package.json."
+        },
+        "trufflehog": {
+          "status": "clean",
+          "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+        }
+      },
+      "publicationError": "ClawScan judge status was failed: Judge artifact inspection did not include required file artifact/package.json."
     },
     {
       "name": "@crawlora-org/youtube",
@@ -16,7 +28,23 @@
       "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/youtube",
       "releaseId": "rd7b2pn40j0g466fhstwrn8zqd8e4qg2",
       "attemptId": "zx75m1qjmy82k7pb8vqy8s2cw18e4gzp",
-      "publicationStatus": "pending"
+      "publicationStatus": "published",
+      "artifactSha256": "7beb993214d2cd231f27eb3666874b6ba9244d78acf58e96a745a51804c4950c",
+      "checks": {
+        "clawscan": {
+          "status": "clean",
+          "summary": "This plugin coherently exposes a single YouTube transcript tool that sends the requested video ID and a Crawlora API key to Crawlora's documented API."
+        },
+        "trufflehog": {
+          "status": "clean",
+          "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+        }
+      },
+      "publicInstallVerified": true,
+      "registeredTools": [
+        "crawlora_youtube_transcript"
+      ],
+      "downloadDigestVerified": true
     },
     {
       "name": "@crawlora-org/google",
@@ -25,7 +53,27 @@
       "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/google",
       "releaseId": "rd773knme0a1jydmkagwpz8gfn8e4422",
       "attemptId": "zx79b9n4cnfmbxj6zapkdkc2918e45ze",
-      "publicationStatus": "pending"
+      "publicationStatus": "published",
+      "artifactSha256": "ff53d62863a0ca16f14fe70bde5492bb96bf57657b47b023e6b2f9464e2a7a74",
+      "checks": {
+        "clawscan": {
+          "status": "clean",
+          "summary": "This plugin is a disclosed Crawlora-backed Google search integration that sends search parameters and a Crawlora API key to Crawlora, with no evidence of hidden local access, persistence, or destructive behavior."
+        },
+        "trufflehog": {
+          "status": "clean",
+          "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+        }
+      },
+      "publicInstallVerified": true,
+      "registeredTools": [
+        "crawlora_google_search",
+        "crawlora_google_news",
+        "crawlora_google_videos",
+        "crawlora_google_trends_explore",
+        "crawlora_google_map_search"
+      ],
+      "downloadDigestVerified": true
     },
     {
       "name": "@crawlora-org/sec",
@@ -34,7 +82,29 @@
       "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/sec",
       "releaseId": "rd7ftypqs87z2yt8c99t7nc73n8e5vw8",
       "attemptId": "zx7cw7wq6hq1tns84wk0achaqn8e5b53",
-      "publicationStatus": "pending"
+      "publicationStatus": "published",
+      "artifactSha256": "982092d7439bfe0b6e2986209fc86f3a79816578527d93e49a731d067fe1e8cd",
+      "checks": {
+        "clawscan": {
+          "status": "clean",
+          "summary": "This plugin is a disclosed SEC EDGAR research integration that sends requested tool inputs and a Crawlora API key to Crawlora's API, with no evidence of hidden local access or unsafe persistence."
+        },
+        "trufflehog": {
+          "status": "clean",
+          "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+        }
+      },
+      "publicInstallVerified": true,
+      "registeredTools": [
+        "crawlora_sec_company_search",
+        "crawlora_sec_company_intelligence",
+        "crawlora_sec_financials",
+        "crawlora_sec_filings",
+        "crawlora_sec_filing_sections",
+        "crawlora_sec_full_text_search",
+        "crawlora_sec_insider"
+      ],
+      "downloadDigestVerified": true
     }
   ]
 }

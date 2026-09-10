@@ -148,6 +148,18 @@ clawhub package publish . --owner crawlora-org --wait
 
 ClawHub's security checks must finish before a release is publicly installable. Publish credentials stay outside this repository.
 
+For a platform release, build and validate the selected packages, commit and push the source, then publish each package from its own directory:
+
+```sh
+npm test
+npm run platforms:validate
+clawhub package validate packages/amazon --openclaw-version 2026.9.3
+clawhub package publish packages/amazon --owner crawlora-org --dry-run
+clawhub package publish packages/amazon --owner crawlora-org --wait
+```
+
+Substitute `youtube`, `google`, or `sec` as needed. Track each attempt ID and artifact digest in `notes/releases/`. A pending upload is not a published release; inspect the existing attempt before retrying an uncertain upload.
+
 ## License
 
 [MIT](LICENSE). Copyright 2026 Crawlora.
