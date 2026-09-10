@@ -38,3 +38,15 @@ The plugin's hiring-signals surface intentionally supports five providers; do no
 - The old skill repository now links users to this maintained standalone plugin.
 
 This is a community package published by Crawlora, not an OpenClaw-official plugin. OpenClaw 2026.9.3's trust inspection uses a catch-all `provenance-invalid` reason for recorded community installs that do not satisfy its official-plugin predicate; the install audit, artifact verification, loaded runtime, and empty diagnostics above are the relevant functional checks.
+
+## Platform package split (2026-09-10)
+
+The first four platform packages are `@crawlora-org/amazon` (2 tools), `@crawlora-org/youtube` (1), `@crawlora-org/google` (5), and `@crawlora-org/sec` (7), with runtime ids `crawlora-<platform>` and platform-branded display names. They are curated subsets of the existing starter, not full copies of every corresponding REST endpoint.
+
+`src/index.ts` remains the reviewed tool catalog. `scripts/platforms.mjs` selects tools and identities; `scripts/build-platforms.mjs` uses the TypeScript AST to generate per-package source, compiled JS, manifest, and docs. Each package includes its own compiled shared client and depends only on the public SDK, TypeBox, and the OpenClaw host. There are no imports of another plugin at runtime. Changes to generated files belong in the catalog, client, or generator; CI checks regeneration drift.
+
+Platform packages retain the established `crawlora_<family>_<action>` tool names. They can coexist with one another, but must not run alongside the overlapping starter. Their registration guard rejects an enabled `plugins.entries.crawlora` entry before registering any tools; disable the starter first and do not re-enable it alongside the platform packages.
+
+Release a built `packages/<platform>` directory, not the monorepo root. The root package is the already published starter. Keep each package version and source commit pinned in release receipts. A repeat release must inspect existing registry state before publishing; never overwrite a version after uncertain upload output.
+
+Live pre-release checks: Amazon search, YouTube transcript (`jNQXAC9IVRw`), Google News, and SEC company search succeeded. Google organic search returned HTTP 503 on two separate queries (`OpenClaw` and `coffee`); the adapter's HTTP contract test passed and its error mapping surfaced the upstream failure correctly. Treat this as a known service-availability limitation, not a passing live search check. The standard platform smoke uses Google News; do not misreport it as validating organic search.

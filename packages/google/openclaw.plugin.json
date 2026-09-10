@@ -1,0 +1,36 @@
+{
+  "id": "crawlora-google",
+  "name": "Google by Crawlora",
+  "description": "Google search, news, videos, Maps, and Trends through Crawlora.",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "apiKey": {
+        "type": "string",
+        "description": "Crawlora API key. Falls back to the CRAWLORA_API_KEY environment variable."
+      }
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "crawlora_google_search",
+      "crawlora_google_news",
+      "crawlora_google_videos",
+      "crawlora_google_trends_explore",
+      "crawlora_google_map_search"
+    ]
+  },
+  "categories": [
+    "web"
+  ],
+  "uiHints": {
+    "apiKey": {
+      "label": "Crawlora API key",
+      "sensitive": true
+    }
+  }
+}

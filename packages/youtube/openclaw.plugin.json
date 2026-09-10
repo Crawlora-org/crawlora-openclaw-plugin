@@ -1,0 +1,32 @@
+{
+  "id": "crawlora-youtube",
+  "name": "YouTube by Crawlora",
+  "description": "YouTube video transcripts through Crawlora.",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "apiKey": {
+        "type": "string",
+        "description": "Crawlora API key. Falls back to the CRAWLORA_API_KEY environment variable."
+      }
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "crawlora_youtube_transcript"
+    ]
+  },
+  "categories": [
+    "web"
+  ],
+  "uiHints": {
+    "apiKey": {
+      "label": "Crawlora API key",
+      "sensitive": true
+    }
+  }
+}

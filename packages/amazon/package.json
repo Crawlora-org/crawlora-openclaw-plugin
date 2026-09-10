@@ -1,7 +1,7 @@
 {
-  "name": "@crawlora-org/openclaw-plugin",
+  "name": "@crawlora-org/amazon",
   "version": "1.0.0",
-  "description": "Crawlora tools for OpenClaw: live structured web search, products, maps, transcripts, finance, and company research.",
+  "description": "Amazon product search and product details through Crawlora.",
   "type": "module",
   "main": "./dist/index.js",
   "files": [
@@ -15,22 +15,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Crawlora-org/crawlora-openclaw-plugin.git"
+    "url": "git+https://github.com/Crawlora-org/crawlora-openclaw-plugin.git",
+    "directory": "packages/amazon"
   },
-  "homepage": "https://github.com/Crawlora-org/crawlora-openclaw-plugin#readme",
+  "homepage": "https://clawhub.ai/crawlora-org/plugins/amazon",
   "bugs": {
     "url": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/issues"
   },
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "plugin:build": "npm run build && openclaw plugins build --entry ./dist/index.js && node scripts/manifest.mjs",
-    "plugin:validate": "npm run plugin:build && openclaw plugins validate --entry ./dist/index.js",
-    "test": "npm run build && npm run platforms:build && node --test test/*.test.mjs",
-    "prepack": "npm run plugin:build",
-    "test:live": "npm run build && node scripts/live-smoke.mjs",
-    "platforms:build": "node scripts/build-platforms.mjs",
-    "platforms:validate": "node scripts/validate-platforms.mjs"
+    "plugin:validate": "openclaw plugins validate --entry ./dist/index.js"
   },
   "dependencies": {
     "@crawlora-org/sdk": "1.41.0-sdk.1",

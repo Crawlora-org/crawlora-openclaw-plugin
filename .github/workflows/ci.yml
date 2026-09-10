@@ -16,4 +16,6 @@ jobs:
       - run: npm ci
       - run: npm run plugin:validate
       - run: npm test
+      - run: npm run platforms:validate
+      - run: git diff --exit-code -- packages/
       - run: npm pack --dry-run
