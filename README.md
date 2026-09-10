@@ -9,8 +9,10 @@ This is a native OpenClaw **tool plugin**, backed by the official [`@crawlora-or
 Requires **OpenClaw 2026.9.3** and **Node >=24.16.0 <25 or >=26.1.0**. This initial release declares the exact OpenClaw version tested; broader compatibility will be added after testing.
 
 ```sh
-openclaw plugins install clawhub:@crawlora-org/openclaw-plugin
+openclaw plugins install clawhub:@crawlora-org/openclaw-plugin --accept-capabilities
 ```
+
+The capability flag approves registration of the 23 tools listed below. Review the tool list and data-handling section before installing.
 
 Add the following to your existing OpenClaw configuration, merging the `plugins` fields:
 
@@ -100,7 +102,7 @@ npm ci
 npm run plugin:validate
 npm test
 npm pack --pack-destination /tmp
-openclaw plugins install npm-pack:/tmp/crawlora-org-openclaw-plugin-1.0.0.tgz
+openclaw plugins install npm-pack:/tmp/crawlora-org-openclaw-plugin-1.0.0.tgz --force --accept-capabilities
 openclaw plugins inspect crawlora --runtime --json
 ```
 
