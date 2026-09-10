@@ -9,12 +9,34 @@
   "totalBytes": 4926,
   "status": "pending-publication",
   "releaseId": "rd7108p8ggn956d7bjgcr2yt3d8e518q",
-  "publicationStatus": "pending",
+  "publicationStatus": "published",
   "attemptId": "zx70xscq79c93gx5fdse7exjs58e56qn",
   "validation": {
     "testsPassed": 88,
     "inspectorIssues": 0,
     "openclawValidator": "passed",
     "liveCheck": "passed"
+  },
+  "artifactSha256": "5347592697ea4d54751d0a1e44aa2548072966fe211833a3e691d4cc5f004ce4",
+  "checks": {
+    "clawscan": {
+      "status": "clean",
+      "summary": "This plugin does what it says: it adds Crawlora job-board lookup tools that call Crawlora's API with a user-provided API key."
+    },
+    "trufflehog": {
+      "status": "clean",
+      "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+    }
+  },
+  "publicInstallVerified": true,
+  "registeredTools": [
+    "crawlora_jobs_hiring_signals",
+    "crawlora_jobs_company_search"
+  ],
+  "downloadDigestVerified": true,
+  "liveCheckPassed": true,
+  "publicValidationSummary": {
+    "warningCount": 0,
+    "errorCount": 0
   }
 }
