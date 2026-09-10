@@ -1,0 +1,20 @@
+{
+  "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/jobs",
+  "name": "@crawlora-org/jobs",
+  "displayName": "Jobs by Crawlora",
+  "family": "code-plugin",
+  "version": "1.0.0",
+  "commit": "37cc337d8ffc992c006156f6d9d08277cf4e3783",
+  "files": 8,
+  "totalBytes": 4926,
+  "status": "pending-publication",
+  "releaseId": "rd7108p8ggn956d7bjgcr2yt3d8e518q",
+  "publicationStatus": "pending",
+  "attemptId": "zx70xscq79c93gx5fdse7exjs58e56qn",
+  "validation": {
+    "testsPassed": 88,
+    "inspectorIssues": 0,
+    "openclawValidator": "passed",
+    "liveCheck": "passed"
+  }
+}
