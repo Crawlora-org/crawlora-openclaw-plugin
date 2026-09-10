@@ -10,4 +10,5 @@ export const platforms = [
  {"slug": "greenhouse", "title": "Greenhouse", "schemaMetadata": true, "tools": ["crawlora_jobs_greenhouse_board"], "example": "List current public jobs on Stripe’s Greenhouse board.", "summary": "Public Greenhouse job-board listings through Crawlora."},
  {"slug": "lever", "title": "Lever", "schemaMetadata": true, "tools": ["crawlora_jobs_lever_postings"], "example": "List current public jobs on Spotify’s Lever board.", "summary": "Public Lever job postings through Crawlora."},
  {"slug": "ashby", "title": "Ashby", "schemaMetadata": true, "tools": ["crawlora_jobs_ashby_board"], "example": "List current public jobs on OpenAI’s Ashby board.", "summary": "Public Ashby job-board listings through Crawlora."},
+ {"slug": "jobs", "title": "Jobs", "schemaMetadata": true, "tools": ["crawlora_jobs_hiring_signals", "crawlora_jobs_company_search"], "example": "Find a company’s ATS and summarize its current hiring signals.", "summary": "ATS discovery and hiring signals across public company job boards through Crawlora."},
 ];
