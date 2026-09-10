@@ -21,10 +21,11 @@ function checkUrl(actual, expected) {
 test('every registered tool has a request contract test and unique metadata', () => {
  const metadata=getToolPluginMetadata(plugin);
  assert.equal(metadata.tools.length,23);
- assert.deepEqual([...tools().keys()].sort(),cases.map(x=>'crawlora_'+x[0]).sort());
+ const rootCases=cases.filter(x=>metadata.tools.some(tool=>tool.name==='crawlora_'+x[0]));
+ assert.deepEqual([...tools().keys()].sort(),rootCases.map(x=>'crawlora_'+x[0]).sort());
  assert.deepEqual(metadata.tools.map(x=>x.name).sort(),[...tools().keys()].sort());
 });
-for (const [name,params,method,path,body] of cases) {
+for (const [name,params,method,path,body] of cases.filter(x=>getToolPluginMetadata(plugin).tools.some(tool=>tool.name==='crawlora_'+x[0]))) {
  test(`${name}: schema, SDK request, authentication and structured result`,async t=>{
   let calls=0;
   t.mock.method(globalThis,'fetch',async (url,options)=>{

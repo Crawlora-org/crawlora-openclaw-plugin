@@ -1,0 +1,55 @@
+{
+  "name": "@crawlora-org/apple-jobs",
+  "version": "1.0.0",
+  "description": "Apple public job search through Crawlora.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=24.16.0 <25 || >=26.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crawlora-org/crawlora-openclaw-plugin.git",
+    "directory": "packages/apple-jobs"
+  },
+  "homepage": "https://clawhub.ai/crawlora-org/plugins/apple-jobs",
+  "bugs": {
+    "url": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "plugin:validate": "openclaw plugins validate --entry ./dist/index.js"
+  },
+  "dependencies": {
+    "@crawlora-org/sdk": "1.41.0-sdk.1",
+    "typebox": "1.3.18"
+  },
+  "devDependencies": {
+    "openclaw": "2026.9.3",
+    "typescript": "5.9.3",
+    "@types/node": "^24.0.0"
+  },
+  "peerDependencies": {
+    "openclaw": "2026.9.3"
+  },
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ],
+    "compat": {
+      "pluginApi": "2026.9.3",
+      "minGatewayVersion": "2026.9.3"
+    },
+    "build": {
+      "openclawVersion": "2026.9.3",
+      "pluginSdkVersion": "2026.9.3"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "crawlora-booking",
+  "name": "Booking.com by Crawlora",
+  "description": "Booking.com public accommodation search through Crawlora.",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "apiKey": {
+        "type": "string",
+        "description": "Crawlora API key. Falls back to the CRAWLORA_API_KEY environment variable."
+      }
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "crawlora_booking_search"
+    ]
+  },
+  "configContracts": {
+    "secretInputs": {
+      "paths": [
+        {
+          "path": "apiKey",
+          "expected": "string"
+        }
+      ]
+    }
+  }
+}

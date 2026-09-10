@@ -1,0 +1,33 @@
+{
+  "id": "crawlora-coingecko",
+  "name": "CoinGecko by Crawlora",
+  "description": "CoinGecko public market data through Crawlora.",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "apiKey": {
+        "type": "string",
+        "description": "Crawlora API key. Falls back to the CRAWLORA_API_KEY environment variable."
+      }
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "crawlora_coingecko_markets"
+    ]
+  },
+  "configContracts": {
+    "secretInputs": {
+      "paths": [
+        {
+          "path": "apiKey",
+          "expected": "string"
+        }
+      ]
+    }
+  }
+}
