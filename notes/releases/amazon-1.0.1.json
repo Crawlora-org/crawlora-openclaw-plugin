@@ -9,11 +9,35 @@
   "totalBytes": 4486,
   "status": "pending-publication",
   "releaseId": "rd74rn4xterbnvk30z1eb057k58e4z1f",
-  "publicationStatus": "pending",
+  "publicationStatus": "published",
   "attemptId": "zx73awatzk4q000673v11st3bx8e509x",
   "validation": {
     "testsPassed": 83,
     "inspectorIssues": 0,
     "apiKeySensitivityVerified": true
-  }
+  },
+  "artifactSha256": "5b5bca1e89b4e33ecf96622fdae23ab37d9b552da6e0b0d9bb21755778de2daf",
+  "checks": {
+    "clawscan": {
+      "status": "clean",
+      "summary": "This plugin does what it claims: it sends Amazon search terms or ASINs to Crawlora using a Crawlora API key, with the remote data flow disclosed."
+    },
+    "trufflehog": {
+      "status": "clean",
+      "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+    }
+  },
+  "publicInstallVerified": true,
+  "registeredToolCount": 2,
+  "downloadDigestVerified": true,
+  "sensitiveApiKeyVerified": true,
+  "liveSearchPassed": true,
+  "publicValidationSummary": {
+    "errorCount": 0.0,
+    "findingCount": 0.0,
+    "incompatibleAfterOpenClawVersion": null,
+    "warningCount": 0.0
+  },
+  "githubRelease": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/tag/amazon-v1.0.1",
+  "githubDigestVerified": true
 }
