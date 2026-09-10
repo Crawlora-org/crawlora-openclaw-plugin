@@ -19,7 +19,17 @@
           "summary": "TruffleHog found no verified secrets in the staged publish artifact."
         }
       },
-      "publicationError": "ClawScan judge status was failed: Judge artifact inspection did not include required file artifact/package.json."
+      "publicationError": "ClawScan judge status was failed: Judge artifact inspection did not include required file artifact/package.json.",
+      "rescan": {
+        "alreadyQueued": true,
+        "jobId": "v57avn2aed0hyj4aw6hqb66fjx8e5g2g",
+        "name": "@crawlora-org/amazon",
+        "ok": true,
+        "packageId": "rn715hze6g24j9mvp4498m7jd18e4h85",
+        "packageReleaseId": "rd7348ts6631g6csshchs74dz58e5n9v",
+        "version": "1.0.0"
+      },
+      "listingError": "AMBIGUOUS_SKILL_SLUG: publisher plugin route falls back to bare amazon skill lookup while package is unpublished"
     },
     {
       "name": "@crawlora-org/youtube",
