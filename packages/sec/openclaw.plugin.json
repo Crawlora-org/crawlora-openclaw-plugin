@@ -2,7 +2,7 @@
   "id": "crawlora-sec",
   "name": "SEC EDGAR by Crawlora",
   "description": "SEC EDGAR company research, financial statements, filings, and insider transactions through Crawlora.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "configSchema": {
     "type": "object",
     "properties": {
@@ -26,13 +26,14 @@
       "crawlora_sec_insider"
     ]
   },
-  "categories": [
-    "web"
-  ],
-  "uiHints": {
-    "apiKey": {
-      "label": "Crawlora API key",
-      "sensitive": true
+  "configContracts": {
+    "secretInputs": {
+      "paths": [
+        {
+          "path": "apiKey",
+          "expected": "string"
+        }
+      ]
     }
   }
 }

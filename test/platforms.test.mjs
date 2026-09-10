@@ -48,3 +48,12 @@ for(const platform of platforms){
  }
 }
 test('all four platforms coexist with exactly 15 distinct tools',()=>assert.equal(combined.size,15));
+
+test('SEC uses the host secret-input contract without unsupported manifest metadata',()=>{
+ const manifest=JSON.parse(readFileSync(new URL('../packages/sec/openclaw.plugin.json',import.meta.url)));
+ assert.deepEqual(manifest.configContracts.secretInputs.paths,[{path:'apiKey',expected:'string'}]);
+ assert.equal(manifest.uiHints,undefined);
+ assert.equal(manifest.categories,undefined);
+ const pkg=JSON.parse(readFileSync(new URL('../packages/sec/package.json',import.meta.url)));
+ assert.equal(manifest.version,pkg.version);
+});

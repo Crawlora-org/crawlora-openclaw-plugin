@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/sec",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SEC EDGAR company research, financial statements, filings, and insider transactions through Crawlora.",
   "type": "module",
   "main": "./dist/index.js",

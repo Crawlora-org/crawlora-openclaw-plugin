@@ -25,7 +25,7 @@ for(const platform of platforms){
  writeFileSync(resolve(dir,'src/index.ts'),entry);
  const client=readFileSync(resolve(root,'src/client.ts'),'utf8').replace('plugins.entries.crawlora.config.apiKey',`plugins.entries.${id}.config.apiKey`).replace('crawlora-openclaw-plugin/1.0.0',`crawlora-${slug}/1.0.0`);
  writeFileSync(resolve(dir,'src/client.ts'),client);
- const pkg={...base,name:`@crawlora-org/${slug}`,version:'1.0.0',description:summary,repository:{...base.repository,directory:`packages/${slug}`},homepage:`https://clawhub.ai/crawlora-org/plugins/${slug}`,scripts:{build:'tsc -p tsconfig.json','plugin:validate':'openclaw plugins validate --entry ./dist/index.js'},devDependencies:base.devDependencies};
+ const pkg={...base,name:`@crawlora-org/${slug}`,version:platform.version??'1.0.0',description:summary,repository:{...base.repository,directory:`packages/${slug}`},homepage:`https://clawhub.ai/crawlora-org/plugins/${slug}`,scripts:{build:'tsc -p tsconfig.json','plugin:validate':'openclaw plugins validate --entry ./dist/index.js'},devDependencies:base.devDependencies};
  writeFileSync(resolve(dir,'package.json'),JSON.stringify(pkg,null,2)+'\n');
  copyFileSync(resolve(root,'tsconfig.json'),resolve(dir,'tsconfig.json'));
  copyFileSync(resolve(root,'LICENSE'),resolve(dir,'LICENSE'));
@@ -33,7 +33,7 @@ for(const platform of platforms){
  if(compile.status!==0)process.exit(compile.status??1);
  const module=await import(pathToFileURL(resolve(dir,'dist/index.js')).href+'?build='+Date.now());
  const meta=getToolPluginMetadata(module.default);
- const manifest={id:meta.id,name:meta.name,description:meta.description,version:pkg.version,configSchema:meta.configSchema,activation:meta.activation,contracts:{tools:meta.tools.map(t=>t.name)},categories:['web'],uiHints:{apiKey:{label:'Crawlora API key',sensitive:true}}};
+ const manifest={id:meta.id,name:meta.name,description:meta.description,version:pkg.version,configSchema:meta.configSchema,activation:meta.activation,contracts:{tools:meta.tools.map(t=>t.name)},...(platform.schemaMetadata?{configContracts:{secretInputs:{paths:[{path:'apiKey',expected:'string'}]}}}:{categories:['web'],uiHints:{apiKey:{label:'Crawlora API key',sensitive:true}}})};
  writeFileSync(resolve(dir,'openclaw.plugin.json'),JSON.stringify(manifest,null,2)+'\n');
  const rows=meta.tools.map(t=>`| \`${t.name}\` | ${t.description} |`).join('\n');
  const params=meta.tools.map(t=>`### ${t.name}\n\n\`\`\`json\n${JSON.stringify(t.parameters,null,2)}\n\`\`\``).join('\n\n');
