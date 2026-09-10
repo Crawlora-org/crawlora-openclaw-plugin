@@ -1,0 +1,40 @@
+{
+  "packages": [
+    {
+      "name": "@crawlora-org/amazon",
+      "version": "1.0.0",
+      "commit": "f9a36e41c317cfffaa1e89b0eb695d455041f39a",
+      "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/amazon",
+      "releaseId": "rd7348ts6631g6csshchs74dz58e5n9v",
+      "attemptId": "zx7258gy3h2p15jh09b4nva5j18e4vf8",
+      "publicationStatus": "pending"
+    },
+    {
+      "name": "@crawlora-org/youtube",
+      "version": "1.0.0",
+      "commit": "f9a36e41c317cfffaa1e89b0eb695d455041f39a",
+      "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/youtube",
+      "releaseId": "rd7b2pn40j0g466fhstwrn8zqd8e4qg2",
+      "attemptId": "zx75m1qjmy82k7pb8vqy8s2cw18e4gzp",
+      "publicationStatus": "pending"
+    },
+    {
+      "name": "@crawlora-org/google",
+      "version": "1.0.0",
+      "commit": "f9a36e41c317cfffaa1e89b0eb695d455041f39a",
+      "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/google",
+      "releaseId": "rd773knme0a1jydmkagwpz8gfn8e4422",
+      "attemptId": "zx79b9n4cnfmbxj6zapkdkc2918e45ze",
+      "publicationStatus": "pending"
+    },
+    {
+      "name": "@crawlora-org/sec",
+      "version": "1.0.0",
+      "commit": "f9a36e41c317cfffaa1e89b0eb695d455041f39a",
+      "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/sec",
+      "releaseId": "rd7ftypqs87z2yt8c99t7nc73n8e5vw8",
+      "attemptId": "zx7cw7wq6hq1tns84wk0achaqn8e5b53",
+      "publicationStatus": "pending"
+    }
+  ]
+}
