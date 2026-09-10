@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-10",
+  "commit": "b6ec338a0a2cd1d1b80e364e120db7ddae3d082d",
+  "catalogSource": "scripts/platforms.mjs autoCatalog",
+  "newPackageCount": 83,
+  "totalPackageCount": 111,
+  "totalToolCount": 123,
+  "scope": "Public retail, travel, food, sports, media, developer, social, and marketplace families. Internal account, billing, monitoring, usage, and user-management operations are excluded.",
+  "verification": {
+    "tests": "405 passing",
+    "openclawValidation": "111 packages valid on OpenClaw 2026.9.3",
+    "clawhubInspector": "83 new packages clean: 0 errors, 0 warnings",
+    "registryVisibility": "82 new packages visible immediately; Foodpanda remained moderation-pending at receipt time",
+    "source": "https://github.com/Crawlora-org/crawlora-openclaw-plugin"
+  }
+}
