@@ -47,13 +47,13 @@ for(const platform of platforms){
   });
  }
 }
-test('all four platforms coexist with exactly 15 distinct tools',()=>assert.equal(combined.size,15));
+test('all ten platforms coexist with exactly 21 distinct tools',()=>assert.equal(combined.size,21));
 
-test('SEC uses the host secret-input contract without unsupported manifest metadata',()=>{
- const manifest=JSON.parse(readFileSync(new URL('../packages/sec/openclaw.plugin.json',import.meta.url)));
+for(const platform of platforms.filter(p=>p.schemaMetadata))test(`${platform.slug}: uses the host secret-input contract without unsupported manifest metadata`,()=>{
+ const manifest=JSON.parse(readFileSync(new URL(`../packages/${platform.slug}/openclaw.plugin.json`,import.meta.url)));
  assert.deepEqual(manifest.configContracts.secretInputs.paths,[{path:'apiKey',expected:'string'}]);
  assert.equal(manifest.uiHints,undefined);
  assert.equal(manifest.categories,undefined);
- const pkg=JSON.parse(readFileSync(new URL('../packages/sec/package.json',import.meta.url)));
+ const pkg=JSON.parse(readFileSync(new URL(`../packages/${platform.slug}/package.json`,import.meta.url)));
  assert.equal(manifest.version,pkg.version);
 });

@@ -1,0 +1,33 @@
+{
+  "id": "crawlora-greenhouse",
+  "name": "Greenhouse by Crawlora",
+  "description": "Public Greenhouse job-board listings through Crawlora.",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "apiKey": {
+        "type": "string",
+        "description": "Crawlora API key. Falls back to the CRAWLORA_API_KEY environment variable."
+      }
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "crawlora_jobs_greenhouse_board"
+    ]
+  },
+  "configContracts": {
+    "secretInputs": {
+      "paths": [
+        {
+          "path": "apiKey",
+          "expected": "string"
+        }
+      ]
+    }
+  }
+}

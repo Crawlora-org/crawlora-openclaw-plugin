@@ -10,7 +10,7 @@ Requires OpenClaw **2026.9.3**, Node **>=24.16.0 <25 or >=26.1.0**, and a [Crawl
 openclaw plugins install clawhub:@crawlora-org/sec --accept-capabilities
 ```
 
-The flag consents to the tools listed below. These four platform plugins can run together. If you have the overlapping Crawlora starter plugin enabled, first run `openclaw plugins disable crawlora`; this plugin refuses registration while that starter is enabled. Do not re-enable both at once.
+The flag consents to the tools listed below. These platform plugins can run together. If you have the overlapping Crawlora starter plugin enabled, first run `openclaw plugins disable crawlora`; this plugin refuses registration while that starter is enabled. Do not re-enable both at once.
 
 Set `CRAWLORA_API_KEY` in your Gateway process environment, or merge this into your existing OpenClaw config:
 

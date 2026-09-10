@@ -74,3 +74,11 @@ The SEC warning was `manifest-unknown-fields` for `categories` and `uiHints`. Re
 Validation: 58 tests pass; ClawHub Plugin Inspector against OpenClaw 2026.9.3 reports no issues. OpenClaw's actual configuration schema builder returned `sensitive: true` for `plugins.entries.crawlora-sec.config.apiKey` using the new secret-input contract. No credentials were used or exposed in this check.
 
 SEC v1.0.1 is now public on ClawHub with zero warnings and zero errors in the live validation summary. Both publication checks are clean. Its public artifact SHA-256 is `d003af2a201fe16e722d38dd7467eb28b73b11835577996448521c62842b7464`; a fresh ClawHub install loaded version 1.0.1 with seven tools, and the installed manifest's secret-input contract still produces `sensitive: true` in OpenClaw's configuration schema. ClawHub classified the plugin under Research. GitHub release: https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/tag/sec-v1.0.1. See `notes/releases/sec-1.0.1.json` for the final receipt.
+
+## Six-platform expansion (2026-09-10)
+
+Added Bing, eBay, Yahoo Finance, Greenhouse, Lever, and Ashby packages, one reviewed existing tool per platform. Together with the first four, the catalog contains ten packages and 21 unique tools. Aggregate hiring signals and company-provider discovery remain in the starter only; do not claim full API coverage for these curated packages.
+
+All six use the supported secret-input manifest contract established by SEC 1.0.1. Each passes the real OpenClaw validator and Plugin Inspector with zero findings; actual host config-schema generation confirms API-key sensitivity. All 82 automated tests pass, including serialized SDK requests for every new tool, exact tool inventories, shared starter-overlap protection, and cross-package uniqueness.
+
+Live checks succeeded: Bing search, eBay listing search, AAPL Yahoo Finance quote, Stripe Greenhouse board, Spotify Lever postings, and OpenAI Ashby board. The latter returned about 12.9 MB because the endpoint includes full postings/descriptions; the Ashby README documents large-response behavior. No new scraper endpoint or SDK regeneration is involved.

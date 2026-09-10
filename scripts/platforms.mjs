@@ -1,7 +1,13 @@
-// Reviewed first-batch package definitions; tools stay in src/index.ts.
+// Reviewed platform package definitions; tools stay in src/index.ts.
 export const platforms = [
  {slug:'amazon',title:'Amazon',tools:['crawlora_amazon_search','crawlora_amazon_product'],example:'Search Amazon for noise cancelling headphones and inspect a matching product.',summary:'Amazon product search and product details through Crawlora.'},
  {slug:'youtube',title:'YouTube',tools:['crawlora_youtube_transcript'],example:'Get the transcript of YouTube video dQw4w9WgXcQ.',summary:'YouTube video transcripts through Crawlora.'},
  {slug:'google',title:'Google',tools:['crawlora_google_search','crawlora_google_news','crawlora_google_videos','crawlora_google_trends_explore','crawlora_google_map_search'],example:'Find coffee shops in San Francisco and search for recent coffee industry news.',summary:'Google search, news, videos, Maps, and Trends through Crawlora.'},
  {slug:'sec',version:'1.0.1',schemaMetadata:true,title:'SEC EDGAR',tools:['crawlora_sec_company_search','crawlora_sec_company_intelligence','crawlora_sec_financials','crawlora_sec_filings','crawlora_sec_filing_sections','crawlora_sec_full_text_search','crawlora_sec_insider'],example:'Resolve AAPL, then get annual financials and recent SEC filings.',summary:'SEC EDGAR company research, financial statements, filings, and insider transactions through Crawlora.'},
+ {"slug": "bing", "title": "Bing", "schemaMetadata": true, "tools": ["crawlora_bing_search"], "example": "Search Bing for recent battery recycling research.", "summary": "Bing web search through Crawlora."},
+ {"slug": "ebay", "title": "eBay", "schemaMetadata": true, "tools": ["crawlora_ebay_search"], "example": "Find vintage mechanical keyboards on eBay.", "summary": "eBay marketplace listing search through Crawlora."},
+ {"slug": "yahoo-finance", "title": "Yahoo Finance", "schemaMetadata": true, "tools": ["crawlora_yahoo_finance_ticker_quote"], "example": "Get the latest available AAPL stock quote.", "summary": "Yahoo Finance ticker quotes through Crawlora."},
+ {"slug": "greenhouse", "title": "Greenhouse", "schemaMetadata": true, "tools": ["crawlora_jobs_greenhouse_board"], "example": "List current public jobs on Stripe’s Greenhouse board.", "summary": "Public Greenhouse job-board listings through Crawlora."},
+ {"slug": "lever", "title": "Lever", "schemaMetadata": true, "tools": ["crawlora_jobs_lever_postings"], "example": "List current public jobs on Spotify’s Lever board.", "summary": "Public Lever job postings through Crawlora."},
+ {"slug": "ashby", "title": "Ashby", "schemaMetadata": true, "tools": ["crawlora_jobs_ashby_board"], "example": "List current public jobs on OpenAI’s Ashby board.", "summary": "Public Ashby job-board listings through Crawlora."},
 ];

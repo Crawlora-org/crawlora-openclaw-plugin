@@ -1,0 +1,33 @@
+{
+  "id": "crawlora-yahoo-finance",
+  "name": "Yahoo Finance by Crawlora",
+  "description": "Yahoo Finance ticker quotes through Crawlora.",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "apiKey": {
+        "type": "string",
+        "description": "Crawlora API key. Falls back to the CRAWLORA_API_KEY environment variable."
+      }
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "crawlora_yahoo_finance_ticker_quote"
+    ]
+  },
+  "configContracts": {
+    "secretInputs": {
+      "paths": [
+        {
+          "path": "apiKey",
+          "expected": "string"
+        }
+      ]
+    }
+  }
+}

@@ -1,13 +1,13 @@
-# Amazon by Crawlora
+# Greenhouse by Crawlora
 
-Amazon product search and product details through Crawlora. This package exposes 2 curated tools. It is an independent Crawlora integration, not an official Amazon or OpenClaw product.
+Public Greenhouse job-board listings through Crawlora. This package exposes 1 curated tools. It is an independent Crawlora integration, not an official Greenhouse or OpenClaw product.
 
 ## Install
 
 Requires OpenClaw **2026.9.3**, Node **>=24.16.0 <25 or >=26.1.0**, and a [Crawlora API key](https://crawlora.net). Requests use your account credits and rate limits.
 
 ```sh
-openclaw plugins install clawhub:@crawlora-org/amazon --accept-capabilities
+openclaw plugins install clawhub:@crawlora-org/greenhouse --accept-capabilities
 ```
 
 The flag consents to the tools listed below. These platform plugins can run together. If you have the overlapping Crawlora starter plugin enabled, first run `openclaw plugins disable crawlora`; this plugin refuses registration while that starter is enabled. Do not re-enable both at once.
@@ -18,7 +18,7 @@ Set `CRAWLORA_API_KEY` in your Gateway process environment, or merge this into y
 {
   "plugins": {
     "entries": {
-      "crawlora-amazon": {
+      "crawlora-greenhouse": {
         "enabled": true,
         "config": {
           "apiKey": "${CRAWLORA_API_KEY}"
@@ -29,56 +29,42 @@ Set `CRAWLORA_API_KEY` in your Gateway process environment, or merge this into y
 }
 ```
 
-Restart the Gateway. If using plugin/tool allowlists, add `crawlora-amazon` to the existing policy. Config takes precedence over the environment. Each platform has its own config entry; all can use the same Crawlora key.
+Restart the Gateway. If using plugin/tool allowlists, add `crawlora-greenhouse` to the existing policy. Config takes precedence over the environment. Each platform has its own config entry; all can use the same Crawlora key.
 
 ```sh
-openclaw plugins inspect crawlora-amazon --runtime --json
+openclaw plugins inspect crawlora-greenhouse --runtime --json
 ```
 
 ## Example
 
-“Search Amazon for noise cancelling headphones and inspect a matching product.”
+“List current public jobs on Stripe’s Greenhouse board.”
 
 ## Tools
 
 | Tool | Purpose |
 | --- | --- |
-| `crawlora_amazon_search` | Search Amazon for products. |
-| `crawlora_amazon_product` | Fetch a single Amazon product by ASIN. |
+| `crawlora_jobs_greenhouse_board` | List a company's public Greenhouse job board postings, normalized to a shared Job shape. |
 
 ## Parameters
 
 These are the exact generated input schemas.
 
-### crawlora_amazon_search
+### crawlora_jobs_greenhouse_board
 
 ```json
 {
   "type": "object",
   "required": [
-    "k"
+    "token"
   ],
   "properties": {
-    "k": {
+    "token": {
       "type": "string",
-      "description": "Search keywords."
-    }
-  }
-}
-```
-
-### crawlora_amazon_product
-
-```json
-{
-  "type": "object",
-  "required": [
-    "asin"
-  ],
-  "properties": {
-    "asin": {
-      "type": "string",
-      "description": "Amazon ASIN."
+      "description": "Greenhouse board token (careers URL slug), e.g. stripe."
+    },
+    "content": {
+      "type": "boolean",
+      "description": "Include full HTML description per job."
     }
   }
 }
