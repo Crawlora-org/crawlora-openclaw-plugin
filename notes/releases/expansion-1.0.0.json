@@ -1,0 +1,88 @@
+{
+  "packages": [
+    {
+      "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/bing",
+      "name": "@crawlora-org/bing",
+      "displayName": "Bing by Crawlora",
+      "family": "code-plugin",
+      "version": "1.0.0",
+      "commit": "99cc07c0f06c14abefacf9b7920aa5e779a37c9f",
+      "files": 8,
+      "totalBytes": 4473,
+      "status": "pending-publication",
+      "releaseId": "rd75sjd75xr6ann9pkhwjmkeqx8e5wbg",
+      "publicationStatus": "pending",
+      "attemptId": "zx72yk8j47j7fgjyr901hnsng58e4m2k"
+    },
+    {
+      "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/ebay",
+      "name": "@crawlora-org/ebay",
+      "displayName": "eBay by Crawlora",
+      "family": "code-plugin",
+      "version": "1.0.0",
+      "commit": "99cc07c0f06c14abefacf9b7920aa5e779a37c9f",
+      "files": 8,
+      "totalBytes": 4406,
+      "status": "pending-publication",
+      "releaseId": "rd77t2q2fdv5jsg367qsfc2e1x8e48t9",
+      "publicationStatus": "pending",
+      "attemptId": "zx7ds5gyd8m70a0k611rfqc2g98e49vq"
+    },
+    {
+      "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/yahoo-finance",
+      "name": "@crawlora-org/yahoo-finance",
+      "displayName": "Yahoo Finance by Crawlora",
+      "family": "code-plugin",
+      "version": "1.0.0",
+      "commit": "99cc07c0f06c14abefacf9b7920aa5e779a37c9f",
+      "files": 8,
+      "totalBytes": 4436,
+      "status": "pending-publication",
+      "releaseId": "rd7c57p9ks8pkwt7yc8zpw1x0s8e5c1z",
+      "publicationStatus": "pending",
+      "attemptId": "zx72pvde4fnt4mgs8vj7t7mbjd8e5gz0"
+    },
+    {
+      "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/greenhouse",
+      "name": "@crawlora-org/greenhouse",
+      "displayName": "Greenhouse by Crawlora",
+      "family": "code-plugin",
+      "version": "1.0.0",
+      "commit": "99cc07c0f06c14abefacf9b7920aa5e779a37c9f",
+      "files": 8,
+      "totalBytes": 4525,
+      "status": "pending-publication",
+      "releaseId": "rd733cccw3wsdeh1pk5rfw3q8s8e5bgx",
+      "publicationStatus": "pending",
+      "attemptId": "zx7ec8vh77s0vb9smyn6x146ed8e4msz"
+    },
+    {
+      "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/lever",
+      "name": "@crawlora-org/lever",
+      "displayName": "Lever by Crawlora",
+      "family": "code-plugin",
+      "version": "1.0.0",
+      "commit": "99cc07c0f06c14abefacf9b7920aa5e779a37c9f",
+      "files": 8,
+      "totalBytes": 4440,
+      "status": "pending-publication",
+      "releaseId": "rd71cjgw76fc2xhrdxekwj58xd8e5tgg",
+      "publicationStatus": "pending",
+      "attemptId": "zx7ax3qqv5wy2ngvyaq9pw61398e5q3k"
+    },
+    {
+      "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/ashby",
+      "name": "@crawlora-org/ashby",
+      "displayName": "Ashby by Crawlora",
+      "family": "code-plugin",
+      "version": "1.0.0",
+      "commit": "99cc07c0f06c14abefacf9b7920aa5e779a37c9f",
+      "files": 8,
+      "totalBytes": 4486,
+      "status": "pending-publication",
+      "releaseId": "rd72dxdh1dk402r4sy7w1daa5h8e464e",
+      "publicationStatus": "pending",
+      "attemptId": "zx7bz3amptnnw7ashq4pv9zz998e41wa"
+    }
+  ]
+}
