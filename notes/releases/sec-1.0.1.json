@@ -9,12 +9,23 @@
   "totalBytes": 5574,
   "status": "pending-publication",
   "releaseId": "rd78dhp8nqa4v0g8qcvg5t1m1n8e5k4r",
-  "publicationStatus": "pending",
+  "publicationStatus": "published",
   "attemptId": "zx74wcv6q6cza5jhxh1x02mpt98e51fh",
   "validation": {
     "automatedTestsPassed": 58,
     "inspectorIssues": 0,
     "openclawVersion": "2026.9.3",
     "sensitiveApiKeyVerified": true
+  },
+  "artifactSha256": "d003af2a201fe16e722d38dd7467eb28b73b11835577996448521c62842b7464",
+  "checks": {
+    "clawscan": {
+      "status": "clean",
+      "summary": "This plugin is a disclosed SEC EDGAR integration that sends user-requested queries and a Crawlora API key to Crawlora's API, with no evidence of hidden local access, persistence, or destructive behavior."
+    },
+    "trufflehog": {
+      "status": "clean",
+      "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+    }
   }
 }
