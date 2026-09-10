@@ -1,0 +1,33 @@
+{
+  "id": "crawlora-jimmy-johns",
+  "name": "Jimmy Johns by Crawlora",
+  "description": "Public Jimmy Johns data through Crawlora.",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "apiKey": {
+        "type": "string",
+        "description": "Crawlora API key. Falls back to the CRAWLORA_API_KEY environment variable."
+      }
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "crawlora_jimmy_johns_nearby"
+    ]
+  },
+  "configContracts": {
+    "secretInputs": {
+      "paths": [
+        {
+          "path": "apiKey",
+          "expected": "string"
+        }
+      ]
+    }
+  }
+}

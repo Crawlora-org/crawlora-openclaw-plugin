@@ -17,7 +17,8 @@ const allTools=new Map(property('tools').initializer.body.elements.map(node=>{
  return [name,node.getText(tree)];
 }));
 const base=JSON.parse(readFileSync(resolve(root,'package.json'),'utf8'));
-for(const platform of platforms){
+const selectedSlugs=process.env.PLATFORMS_ONLY?.split(',').filter(Boolean);
+for(const platform of platforms.filter(item=>!selectedSlugs?.length||selectedSlugs.includes(item.slug))){
  const {slug,title,tools,summary,example,customTools=[]}=platform;
  const dir=resolve(root,'packages',slug);mkdirSync(resolve(dir,'dist'),{recursive:true});mkdirSync(resolve(dir,'src'),{recursive:true});
  const id=`crawlora-${slug}`;
