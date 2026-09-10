@@ -1,0 +1,20 @@
+{
+  "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/sec",
+  "name": "@crawlora-org/sec",
+  "displayName": "SEC EDGAR by Crawlora",
+  "family": "code-plugin",
+  "version": "1.0.1",
+  "commit": "32728258373f59fe88defb090bbfaf65413d25ed",
+  "files": 8,
+  "totalBytes": 5574,
+  "status": "pending-publication",
+  "releaseId": "rd78dhp8nqa4v0g8qcvg5t1m1n8e5k4r",
+  "publicationStatus": "pending",
+  "attemptId": "zx74wcv6q6cza5jhxh1x02mpt98e51fh",
+  "validation": {
+    "automatedTestsPassed": 58,
+    "inspectorIssues": 0,
+    "openclawVersion": "2026.9.3",
+    "sensitiveApiKeyVerified": true
+  }
+}
