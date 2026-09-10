@@ -1,0 +1,19 @@
+{
+  "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/amazon",
+  "name": "@crawlora-org/amazon",
+  "displayName": "Amazon by Crawlora",
+  "family": "code-plugin",
+  "version": "1.0.1",
+  "commit": "7185a87bc39c85a9336f2671373e421eca937133",
+  "files": 8,
+  "totalBytes": 4486,
+  "status": "pending-publication",
+  "releaseId": "rd74rn4xterbnvk30z1eb057k58e4z1f",
+  "publicationStatus": "pending",
+  "attemptId": "zx73awatzk4q000673v11st3bx8e509x",
+  "validation": {
+    "testsPassed": 83,
+    "inspectorIssues": 0,
+    "apiKeySensitivityVerified": true
+  }
+}
