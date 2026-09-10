@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-10",
+  "commit": "e96b9afd14ed7c0c412a4b5fa0692ad88453489e",
+  "github": "https://github.com/Crawlora-org/crawlora-openclaw-plugin",
+  "packages": [
+    "spotify", "tiktok", "reddit", "github", "pinterest", "airbnb", "booking", "yelp", "zillow",
+    "imdb", "steam", "coingecko", "polymarket", "kalshi", "apple-books", "apple-jobs", "opensea"
+  ],
+  "toolCount": 17,
+  "clawhub": {
+    "owner": "crawlora-org",
+    "validation": {"openclawVersion": "2026.9.3", "errors": 0, "warnings": 0},
+    "downloadVerification": "All 17 latest artifacts downloaded successfully and passed ClawHub digest verification.",
+    "pages": [
+      "https://clawhub.ai/crawlora-org/plugins/spotify",
+      "https://clawhub.ai/crawlora-org/plugins/tiktok",
+      "https://clawhub.ai/crawlora-org/plugins/reddit",
+      "https://clawhub.ai/crawlora-org/plugins/github",
+      "https://clawhub.ai/crawlora-org/plugins/pinterest",
+      "https://clawhub.ai/crawlora-org/plugins/airbnb",
+      "https://clawhub.ai/crawlora-org/plugins/booking",
+      "https://clawhub.ai/crawlora-org/plugins/yelp",
+      "https://clawhub.ai/crawlora-org/plugins/zillow",
+      "https://clawhub.ai/crawlora-org/plugins/imdb",
+      "https://clawhub.ai/crawlora-org/plugins/steam",
+      "https://clawhub.ai/crawlora-org/plugins/coingecko",
+      "https://clawhub.ai/crawlora-org/plugins/polymarket",
+      "https://clawhub.ai/crawlora-org/plugins/kalshi",
+      "https://clawhub.ai/crawlora-org/plugins/apple-books",
+      "https://clawhub.ai/crawlora-org/plugins/apple-jobs",
+      "https://clawhub.ai/crawlora-org/plugins/opensea"
+    ]
+  },
+  "liveSmoke": {
+    "passed": ["spotify", "reddit", "github", "pinterest", "airbnb", "yelp", "steam", "coingecko", "polymarket", "kalshi", "apple-books", "apple-jobs", "opensea"],
+    "upstreamUnavailable": ["tiktok", "booking", "imdb"],
+    "parameterRejected": ["zillow"]
+  }
+}
