@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_spotify_search",description:"Search Spotify for tracks, artists, albums, playlists, and podcasts.",parameters:Type.Object({"q": Type.String({"description":"Search query."}),"limit": Type.Optional(Type.Integer({"description":"Maximum results per page.","minimum":1,"maximum":50})),"offset": Type.Optional(Type.Integer({"description":"Result offset.","minimum":0}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"spotify-search",params);}})],
+ tools: (tool) => [tool({name:"crawlora_spotify_search",description:"Search Spotify for tracks, artists, albums, playlists, and podcasts.",parameters:Type.Object({"q": Type.String({"description":"Search query."}),"limit": Type.Optional(Type.Integer({"description":"Maximum results per page.","minimum":1,"maximum":50})),"offset": Type.Optional(Type.Integer({"description":"Result offset.","minimum":0}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"spotify-search",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

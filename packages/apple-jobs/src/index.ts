@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_apple_jobs_search",description:"Search public Apple job openings.",parameters:Type.Object({"q": Type.String({"description":"Role or keyword query."}),"location": Type.Optional(Type.String({"description":"Location filter."})),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"apple-jobs-search",params);}})],
+ tools: (tool) => [tool({name:"crawlora_apple_jobs_search",description:"Search public Apple job openings.",parameters:Type.Object({"q": Type.String({"description":"Role or keyword query."}),"location": Type.Optional(Type.String({"description":"Location filter."})),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"apple-jobs-search",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

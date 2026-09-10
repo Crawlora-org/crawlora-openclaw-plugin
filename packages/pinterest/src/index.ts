@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_pinterest_search",description:"Search public Pinterest pins and boards.",parameters:Type.Object({"query": Type.String({"description":"Search query."})}),async execute(params,config,context){return callCrawlora(config,context.signal,"pinterest-search",params);}})],
+ tools: (tool) => [tool({name:"crawlora_pinterest_search",description:"Search public Pinterest pins and boards.",parameters:Type.Object({"query": Type.String({"description":"Search query."})}),async execute(params,config,context){return callCrawlora(config,context.signal,"pinterest-search",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_steam_app",description:"Fetch public Steam app details.",parameters:Type.Object({"appid": Type.String({"description":"Steam application ID."}),"cc": Type.Optional(Type.String({"description":"Country code."})),"l": Type.Optional(Type.String({"description":"Language code."})),"filters": Type.Optional(Type.String({"description":"Optional response filters."}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"steam-app",params);}})],
+ tools: (tool) => [tool({name:"crawlora_steam_app",description:"Fetch public Steam app details.",parameters:Type.Object({"appid": Type.String({"description":"Steam application ID."}),"cc": Type.Optional(Type.String({"description":"Country code."})),"l": Type.Optional(Type.String({"description":"Language code."})),"filters": Type.Optional(Type.String({"description":"Optional response filters."}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"steam-app",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_tiktok_post",description:"Fetch a public TikTok post by ID.",parameters:Type.Object({"id": Type.String({"description":"TikTok post ID."})}),async execute(params,config,context){return callCrawlora(config,context.signal,"tiktok-post",params);}})],
+ tools: (tool) => [tool({name:"crawlora_tiktok_post",description:"Fetch a public TikTok post by ID.",parameters:Type.Object({"id": Type.String({"description":"TikTok post ID."})}),async execute(params,config,context){return callCrawlora(config,context.signal,"tiktok-post",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

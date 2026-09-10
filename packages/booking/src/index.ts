@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_booking_search",description:"Search public Booking.com accommodations.",parameters:Type.Object({"query": Type.String({"description":"Destination or property query."}),"checkin": Type.String({"description":"Check-in date (YYYY-MM-DD)."}),"checkout": Type.String({"description":"Check-out date (YYYY-MM-DD)."}),"adults": Type.Optional(Type.Number({"description":"Number of adults.","minimum":1})),"rooms": Type.Optional(Type.Number({"description":"Number of rooms.","minimum":1})),"children": Type.Optional(Type.Number({"description":"Number of children.","minimum":0})),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"booking-search",params);}})],
+ tools: (tool) => [tool({name:"crawlora_booking_search",description:"Search public Booking.com accommodations.",parameters:Type.Object({"query": Type.String({"description":"Destination or property query."}),"checkin": Type.String({"description":"Check-in date (YYYY-MM-DD)."}),"checkout": Type.String({"description":"Check-out date (YYYY-MM-DD)."}),"adults": Type.Optional(Type.Number({"description":"Number of adults.","minimum":1})),"rooms": Type.Optional(Type.Number({"description":"Number of rooms.","minimum":1})),"children": Type.Optional(Type.Number({"description":"Number of children.","minimum":0})),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"booking-search",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

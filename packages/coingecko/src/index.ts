@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_coingecko_markets",description:"Fetch public cryptocurrency market rankings.",parameters:Type.Object({"vs_currency": Type.String({"description":"Quote currency, such as usd or eur."}),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1})),"limit": Type.Optional(Type.Number({"description":"Markets per page.","minimum":1,"maximum":250}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"coingecko-markets",params);}})],
+ tools: (tool) => [tool({name:"crawlora_coingecko_markets",description:"Fetch public cryptocurrency market rankings.",parameters:Type.Object({"vs_currency": Type.String({"description":"Quote currency, such as usd or eur."}),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1})),"limit": Type.Optional(Type.Number({"description":"Markets per page.","minimum":1,"maximum":250}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"coingecko-markets",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_github_search_repositories",description:"Search public GitHub repositories.",parameters:Type.Object({"q": Type.String({"description":"Repository search query."}),"sort": Type.Optional(Type.Union([Type.Literal("stars"),Type.Literal("forks"),Type.Literal("help-wanted-issues"),Type.Literal("updated")], {"description":"Sort order."})),"order": Type.Optional(Type.Union([Type.Literal("asc"),Type.Literal("desc")], {"description":"Sort direction."})),"page": Type.Optional(Type.Integer({"description":"Page number.","minimum":1})),"per_page": Type.Optional(Type.Integer({"description":"Results per page.","minimum":1,"maximum":100}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"github-search-repositories",params);}})],
+ tools: (tool) => [tool({name:"crawlora_github_search_repositories",description:"Search public GitHub repositories.",parameters:Type.Object({"q": Type.String({"description":"Repository search query."}),"sort": Type.Optional(Type.Union([Type.Literal("stars"),Type.Literal("forks"),Type.Literal("help-wanted-issues"),Type.Literal("updated")], {"description":"Sort order."})),"order": Type.Optional(Type.Union([Type.Literal("asc"),Type.Literal("desc")], {"description":"Sort direction."})),"page": Type.Optional(Type.Integer({"description":"Page number.","minimum":1})),"per_page": Type.Optional(Type.Integer({"description":"Results per page.","minimum":1,"maximum":100}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"github-search-repositories",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

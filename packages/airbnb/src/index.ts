@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_airbnb_search",description:"Search public Airbnb listings by location.",parameters:Type.Object({"location": Type.String({"description":"City, region, or neighborhood."}),"check_in": Type.Optional(Type.String({"description":"Check-in date (YYYY-MM-DD)."})),"check_out": Type.Optional(Type.String({"description":"Check-out date (YYYY-MM-DD)."})),"adults": Type.Optional(Type.Number({"description":"Number of adults.","minimum":1})),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1})),"currency": Type.Optional(Type.String({"description":"Currency code."}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"airbnb-search",params);}})],
+ tools: (tool) => [tool({name:"crawlora_airbnb_search",description:"Search public Airbnb listings by location.",parameters:Type.Object({"location": Type.String({"description":"City, region, or neighborhood."}),"check_in": Type.Optional(Type.String({"description":"Check-in date (YYYY-MM-DD)."})),"check_out": Type.Optional(Type.String({"description":"Check-out date (YYYY-MM-DD)."})),"adults": Type.Optional(Type.Number({"description":"Number of adults.","minimum":1})),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1})),"currency": Type.Optional(Type.String({"description":"Currency code."}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"airbnb-search",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

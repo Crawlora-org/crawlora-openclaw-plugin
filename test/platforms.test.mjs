@@ -47,7 +47,7 @@ for(const platform of platforms){
   });
  }
 }
-test('all twenty-eight platforms coexist with exactly 40 distinct tools',()=>assert.equal(combined.size,40));
+test('all platform packages coexist with one distinct tool namespace',()=>assert.equal(combined.size,platforms.reduce((total,p)=>total+p.tools.length,0)));
 
 for(const platform of platforms.filter(p=>p.schemaMetadata))test(`${platform.slug}: uses the host secret-input contract without unsupported manifest metadata`,()=>{
  const manifest=JSON.parse(readFileSync(new URL(`../packages/${platform.slug}/openclaw.plugin.json`,import.meta.url)));

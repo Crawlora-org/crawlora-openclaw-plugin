@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_imdb_search",description:"Search public IMDb titles and names.",parameters:Type.Object({"query": Type.String({"description":"Title or name query."}),"limit": Type.Optional(Type.Number({"description":"Maximum results.","minimum":1,"maximum":100}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"imdb-search",params);}})],
+ tools: (tool) => [tool({name:"crawlora_imdb_search",description:"Search public IMDb titles and names.",parameters:Type.Object({"query": Type.String({"description":"Title or name query."}),"limit": Type.Optional(Type.Number({"description":"Maximum results.","minimum":1,"maximum":100}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"imdb-search",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

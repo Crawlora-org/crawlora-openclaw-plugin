@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_apple_books_search",description:"Search the public Apple Books catalog.",parameters:Type.Object({"term": Type.String({"description":"Book search term."}),"country": Type.Optional(Type.String({"description":"Store country code."})),"lang": Type.Optional(Type.String({"description":"Language code."})),"limit": Type.Optional(Type.Number({"description":"Maximum results.","minimum":1,"maximum":200})),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"apple-books-search",params);}})],
+ tools: (tool) => [tool({name:"crawlora_apple_books_search",description:"Search the public Apple Books catalog.",parameters:Type.Object({"term": Type.String({"description":"Book search term."}),"country": Type.Optional(Type.String({"description":"Store country code."})),"lang": Type.Optional(Type.String({"description":"Language code."})),"limit": Type.Optional(Type.Number({"description":"Maximum results.","minimum":1,"maximum":200})),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"apple-books-search",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

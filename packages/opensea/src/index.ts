@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_opensea_collection",description:"Fetch public OpenSea collection data.",parameters:Type.Object({"slug": Type.String({"description":"OpenSea collection slug."})}),async execute(params,config,context){return callCrawlora(config,context.signal,"opensea-collection",params);}})],
+ tools: (tool) => [tool({name:"crawlora_opensea_collection",description:"Fetch public OpenSea collection data.",parameters:Type.Object({"slug": Type.String({"description":"OpenSea collection slug."})}),async execute(params,config,context){return callCrawlora(config,context.signal,"opensea-collection",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_zillow_search",description:"Search public Zillow property listings.",parameters:Type.Object({"location": Type.String({"description":"City, ZIP code, or neighborhood."}),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1})),"status": Type.Optional(Type.Union([Type.Literal("for_sale"),Type.Literal("sale"),Type.Literal("for-sale"),Type.Literal("for_rent"),Type.Literal("rent"),Type.Literal("for-rent"),Type.Literal("sold")], {"description":"Listing status."}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"zillow-search",params);}})],
+ tools: (tool) => [tool({name:"crawlora_zillow_search",description:"Search public Zillow property listings.",parameters:Type.Object({"location": Type.String({"description":"City, ZIP code, or neighborhood."}),"page": Type.Optional(Type.Number({"description":"Page number.","minimum":1})),"status": Type.Optional(Type.Union([Type.Literal("for_sale"),Type.Literal("sale"),Type.Literal("for-sale"),Type.Literal("for_rent"),Type.Literal("rent"),Type.Literal("for-rent"),Type.Literal("sold")], {"description":"Listing status."}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"zillow-search",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

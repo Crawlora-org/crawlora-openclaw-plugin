@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_yelp_search",description:"Search public Yelp businesses.",parameters:Type.Object({"term": Type.String({"description":"Business or service query."}),"location": Type.String({"description":"City, address, or region."}),"limit": Type.Optional(Type.Number({"description":"Maximum businesses.","minimum":1,"maximum":50})),"offset": Type.Optional(Type.Number({"description":"Result offset.","minimum":0}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"yelp-search",params);}})],
+ tools: (tool) => [tool({name:"crawlora_yelp_search",description:"Search public Yelp businesses.",parameters:Type.Object({"term": Type.String({"description":"Business or service query."}),"location": Type.String({"description":"City, address, or region."}),"limit": Type.Optional(Type.Number({"description":"Maximum businesses.","minimum":1,"maximum":50})),"offset": Type.Optional(Type.Number({"description":"Result offset.","minimum":0}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"yelp-search",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {
