@@ -11,8 +11,34 @@
       "totalBytes": 4473,
       "status": "pending-publication",
       "releaseId": "rd75sjd75xr6ann9pkhwjmkeqx8e5wbg",
-      "publicationStatus": "pending",
-      "attemptId": "zx72yk8j47j7fgjyr901hnsng58e4m2k"
+      "publicationStatus": "published",
+      "attemptId": "zx72yk8j47j7fgjyr901hnsng58e4m2k",
+      "artifactSha256": "d07c836a7c46a98dec5db556c3a5e4c7b5979f2739494c834a3a1bf6f0b23683",
+      "checks": {
+        "clawscan": {
+          "status": "clean",
+          "summary": "This is a disclosed Bing search plugin that sends search requests and a Crawlora API key to Crawlora's API, with no evidence of hidden local access or destructive behavior."
+        },
+        "trufflehog": {
+          "status": "clean",
+          "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+        }
+      },
+      "registeredTools": [
+        "crawlora_bing_search"
+      ],
+      "downloadDigestVerified": true,
+      "publicInstallVerified": true,
+      "publicValidationSummary": {
+        "errorCount": 0.0,
+        "findingCount": 0.0,
+        "incompatibleAfterOpenClawVersion": null,
+        "warningCount": 0.0
+      },
+      "githubArtifact": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/download/expansion-v1.0.0/bing-1.0.0.tgz",
+      "githubDigestVerified": true,
+      "sensitiveApiKeyVerified": true,
+      "liveCheckPassed": true
     },
     {
       "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/ebay",
@@ -25,8 +51,34 @@
       "totalBytes": 4406,
       "status": "pending-publication",
       "releaseId": "rd77t2q2fdv5jsg367qsfc2e1x8e48t9",
-      "publicationStatus": "pending",
-      "attemptId": "zx7ds5gyd8m70a0k611rfqc2g98e49vq"
+      "publicationStatus": "published",
+      "attemptId": "zx7ds5gyd8m70a0k611rfqc2g98e49vq",
+      "artifactSha256": "e8616a1544f0045f95c0eeb84073805ea269bff31fa7c2af02d504189df6f7bd",
+      "checks": {
+        "clawscan": {
+          "status": "clean",
+          "summary": "This skill is a disclosed eBay search integration that sends search queries and a Crawlora API key to Crawlora, with no evidence of hidden local access, persistence, shell use, or telemetry."
+        },
+        "trufflehog": {
+          "status": "clean",
+          "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+        }
+      },
+      "registeredTools": [
+        "crawlora_ebay_search"
+      ],
+      "downloadDigestVerified": true,
+      "publicInstallVerified": true,
+      "publicValidationSummary": {
+        "errorCount": 0.0,
+        "findingCount": 0.0,
+        "incompatibleAfterOpenClawVersion": null,
+        "warningCount": 0.0
+      },
+      "githubArtifact": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/download/expansion-v1.0.0/ebay-1.0.0.tgz",
+      "githubDigestVerified": true,
+      "sensitiveApiKeyVerified": true,
+      "liveCheckPassed": true
     },
     {
       "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/yahoo-finance",
@@ -39,8 +91,34 @@
       "totalBytes": 4436,
       "status": "pending-publication",
       "releaseId": "rd7c57p9ks8pkwt7yc8zpw1x0s8e5c1z",
-      "publicationStatus": "pending",
-      "attemptId": "zx72pvde4fnt4mgs8vj7t7mbjd8e5gz0"
+      "publicationStatus": "published",
+      "attemptId": "zx72pvde4fnt4mgs8vj7t7mbjd8e5gz0",
+      "artifactSha256": "3d9300ad0644d561620a49cd9251e22f1f84298a705cb844f5243475fb3b59a7",
+      "checks": {
+        "clawscan": {
+          "status": "clean",
+          "summary": "This plugin coherently provides a Yahoo Finance quote tool through Crawlora and discloses its external API use and API-key requirement."
+        },
+        "trufflehog": {
+          "status": "clean",
+          "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+        }
+      },
+      "registeredTools": [
+        "crawlora_yahoo_finance_ticker_quote"
+      ],
+      "downloadDigestVerified": true,
+      "publicInstallVerified": true,
+      "publicValidationSummary": {
+        "errorCount": 0.0,
+        "findingCount": 0.0,
+        "incompatibleAfterOpenClawVersion": null,
+        "warningCount": 0.0
+      },
+      "githubArtifact": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/download/expansion-v1.0.0/yahoo-finance-1.0.0.tgz",
+      "githubDigestVerified": true,
+      "sensitiveApiKeyVerified": true,
+      "liveCheckPassed": true
     },
     {
       "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/greenhouse",
@@ -53,8 +131,34 @@
       "totalBytes": 4525,
       "status": "pending-publication",
       "releaseId": "rd733cccw3wsdeh1pk5rfw3q8s8e5bgx",
-      "publicationStatus": "pending",
-      "attemptId": "zx7ec8vh77s0vb9smyn6x146ed8e4msz"
+      "publicationStatus": "published",
+      "attemptId": "zx7ec8vh77s0vb9smyn6x146ed8e4msz",
+      "artifactSha256": "1c37a8b700e6e484fef277bb493e243a5886f54d2beac7e7413cde0a0cf28fcb",
+      "checks": {
+        "clawscan": {
+          "status": "clean",
+          "summary": "This plugin is a disclosed Crawlora integration for fetching public Greenhouse job listings and its network/API-key use matches that purpose."
+        },
+        "trufflehog": {
+          "status": "clean",
+          "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+        }
+      },
+      "registeredTools": [
+        "crawlora_jobs_greenhouse_board"
+      ],
+      "downloadDigestVerified": true,
+      "publicInstallVerified": true,
+      "publicValidationSummary": {
+        "errorCount": 0.0,
+        "findingCount": 0.0,
+        "incompatibleAfterOpenClawVersion": null,
+        "warningCount": 0.0
+      },
+      "githubArtifact": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/download/expansion-v1.0.0/greenhouse-1.0.0.tgz",
+      "githubDigestVerified": true,
+      "sensitiveApiKeyVerified": true,
+      "liveCheckPassed": true
     },
     {
       "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/lever",
@@ -67,8 +171,34 @@
       "totalBytes": 4440,
       "status": "pending-publication",
       "releaseId": "rd71cjgw76fc2xhrdxekwj58xd8e5tgg",
-      "publicationStatus": "pending",
-      "attemptId": "zx7ax3qqv5wy2ngvyaq9pw61398e5q3k"
+      "publicationStatus": "published",
+      "attemptId": "zx7ax3qqv5wy2ngvyaq9pw61398e5q3k",
+      "artifactSha256": "726df257fa9f6ba9083e0a45530db10cb4cf87948316702b38430f205cb2106f",
+      "checks": {
+        "clawscan": {
+          "status": "clean",
+          "summary": "This plugin coherently provides a single Crawlora-backed tool for public Lever job listings, with disclosed API-key use and no evidence of hidden execution or persistence."
+        },
+        "trufflehog": {
+          "status": "clean",
+          "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+        }
+      },
+      "registeredTools": [
+        "crawlora_jobs_lever_postings"
+      ],
+      "downloadDigestVerified": true,
+      "publicInstallVerified": true,
+      "publicValidationSummary": {
+        "errorCount": 0.0,
+        "findingCount": 0.0,
+        "incompatibleAfterOpenClawVersion": null,
+        "warningCount": 0.0
+      },
+      "githubArtifact": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/download/expansion-v1.0.0/lever-1.0.0.tgz",
+      "githubDigestVerified": true,
+      "sensitiveApiKeyVerified": true,
+      "liveCheckPassed": true
     },
     {
       "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/ashby",
@@ -81,8 +211,36 @@
       "totalBytes": 4486,
       "status": "pending-publication",
       "releaseId": "rd72dxdh1dk402r4sy7w1daa5h8e464e",
-      "publicationStatus": "pending",
-      "attemptId": "zx7bz3amptnnw7ashq4pv9zz998e41wa"
+      "publicationStatus": "published",
+      "attemptId": "zx7bz3amptnnw7ashq4pv9zz998e41wa",
+      "artifactSha256": "0042740aea4f5dfe2503bbe7479ad481b53ea2a99d769f72f56ef49e2eda4c03",
+      "checks": {
+        "clawscan": {
+          "status": "clean",
+          "summary": "This plugin exposes a single Ashby job-board lookup tool and its external API use is disclosed and aligned with that purpose."
+        },
+        "trufflehog": {
+          "status": "clean",
+          "summary": "TruffleHog found no verified secrets in the staged publish artifact."
+        }
+      },
+      "registeredTools": [
+        "crawlora_jobs_ashby_board"
+      ],
+      "downloadDigestVerified": true,
+      "publicInstallVerified": true,
+      "publicValidationSummary": {
+        "errorCount": 0.0,
+        "findingCount": 0.0,
+        "incompatibleAfterOpenClawVersion": null,
+        "warningCount": 0.0
+      },
+      "githubArtifact": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/download/expansion-v1.0.0/ashby-1.0.0.tgz",
+      "githubDigestVerified": true,
+      "sensitiveApiKeyVerified": true,
+      "liveCheckPassed": true
     }
-  ]
+  ],
+  "githubRelease": "https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/tag/expansion-v1.0.0",
+  "automatedTestsPassed": 82
 }
