@@ -25,3 +25,16 @@ Tool names have a `crawlora_` prefix to avoid collisions. The adapter calls SDK 
 Keep the API base URL pinned: SDK environment overrides must not redirect API keys to arbitrary hosts. Construct a client per call so configuration reloads cannot reuse another key. Pass the tool abort signal. Keep automatic retries disabled unless the billing consequences have been explicitly addressed. Return domain responses under `data` because OpenClaw grades some top-level status/error fields as execution outcomes.
 
 The plugin's hiring-signals surface intentionally supports five providers; do not describe it as the full upstream provider set. SEC tools validate ticker/CIK before a request; provider-specific hiring arguments are likewise checked before a credit-consuming call.
+
+## Published v1.0.0 (2026-09-10)
+
+- ClawHub: https://clawhub.ai/crawlora-org/plugins/openclaw-plugin
+- GitHub release: https://github.com/Crawlora-org/crawlora-openclaw-plugin/releases/tag/v1.0.0
+- Published source commit: `5ba2320abe4e68a7054fb866da68c20d0107d648` (subsequent maintenance notes are not part of the package allowlist).
+- ClawHub release id: `rd7cj69fvf0szg7jtr220j3brn8e5czg`; publication attempt: `zx7f6jkxmwkrbndmys4d6f0ak98e41k2`; final status: `published`.
+- Artifact SHA-256: `d7f4260fb3e1be48ad1d92b93e2883b08a9000ecf6dc66e6990c3c44e525a6e6` (7,825 bytes), downloaded and digest-verified through the ClawHub CLI. The same bytes are attached to the GitHub release.
+- Security audit outcome: **Safe**. The nonblocking P2 metadata inspector warning described above remains; publication succeeded.
+- A fresh profile installed `clawhub:@crawlora-org/openclaw-plugin --accept-capabilities`, then runtime inspection returned `status: loaded`, 23 tools, and all required dependencies installed. A live SEC lookup through that publicly downloaded artifact succeeded.
+- The old skill repository now links users to this maintained standalone plugin.
+
+This is a community package published by Crawlora, not an OpenClaw-official plugin. OpenClaw 2026.9.3's trust inspection uses a catch-all `provenance-invalid` reason for recorded community installs that do not satisfy its official-plugin predicate; the install audit, artifact verification, loaded runtime, and empty diagnostics above are the relevant functional checks.
