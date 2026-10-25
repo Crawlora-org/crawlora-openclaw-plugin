@@ -13,17 +13,23 @@ const autoCatalogThird = [
  ['7now','7now-catalog'],['accor','accor-catalog-hotels'],['apple','apple-books-audiobook-search'],['bigcommerce','bigcommerce-search'],['brooklinen','brooklinen-product'],['colehaan','colehaan-product'],['congress','congress-report'],['jcrew','jcrew-product'],['kyliecosmetics','kyliecosmetics-product'],['ohpolly','ohpolly-product'],['oldnavy','oldnavy-product'],['otto','otto-search'],['pandamart','pandamart-search'],['pitchbook','pitchbook-company'],['popeyes','popeyes-menu'],['quince','quince-product'],['shop','shop-app-product'],['similarweb','similarweb-search'],['skims','skims-product'],['sofascore','sofascore-event'],['stevemadden','stevemadden-product'],['swiggy','swiggy-search'],['target','target-product']
 ];
 const titleFor = slug => slug.split('-').map(word=>word[0].toUpperCase()+word.slice(1)).join(' ');
+const packageReleaseOverrides = {
+ 'amazon-jobs': {version:'1.0.1',sdkVersion:'1.49.0-sdk.4'},
+ rottentomatoes: {version:'1.0.1',sdkVersion:'1.49.0-sdk.4'},
+ shopify: {version:'1.0.1',sdkVersion:'1.49.0-sdk.4'},
+ threads: {version:'1.0.1',sdkVersion:'1.49.0-sdk.4'},
+};
 const autoPlatforms = [...autoCatalog, ...autoCatalogMore, ...autoCatalogThird].map(([slug, operation]) => {
  const meta=sdkOperations[operation];
  if (!meta) throw new Error(`Unknown SDK operation ${operation}`);
  const params=[...(meta.pathParams??[]).map(name=>({name,type:'string',required:true,description:`${name} path parameter.`})),...(meta.queryParams??[]).map(param=>({name:param.name,type:param.type??'string',required:Boolean(param.required),enum:param.enum,description:`${param.name} parameter.`}))];
  const toolName=`crawlora_${slug.replaceAll('-','_')}_${operation.replaceAll('-','_').replace(`${slug.replaceAll('-','_')}_`,'')}`;
- return {slug,title:titleFor(slug),schemaMetadata:true,tools:[toolName],customTools:[{name:toolName,operation,description:`Use Crawlora to access public ${titleFor(slug)} data.`,params}],example:`Retrieve public ${titleFor(slug)} data.`,summary:`Public ${titleFor(slug)} data through Crawlora.`};
+ return {...packageReleaseOverrides[slug],slug,title:titleFor(slug),schemaMetadata:true,tools:[toolName],customTools:[{name:toolName,operation,description:`Use Crawlora to access public ${titleFor(slug)} data.`,params}],example:`Retrieve public ${titleFor(slug)} data.`,summary:`Public ${titleFor(slug)} data through Crawlora.`};
 });
 export const platforms = [
  {slug:'amazon',version:'1.0.1',schemaMetadata:true,title:'Amazon',tools:['crawlora_amazon_search','crawlora_amazon_product'],example:'Search Amazon for noise cancelling headphones and inspect a matching product.',summary:'Amazon product search and product details through Crawlora.'},
  {slug:'youtube',title:'YouTube',tools:['crawlora_youtube_transcript'],example:'Get the transcript of YouTube video dQw4w9WgXcQ.',summary:'YouTube video transcripts through Crawlora.'},
- {slug:'google',title:'Google',tools:['crawlora_google_search','crawlora_google_news','crawlora_google_videos','crawlora_google_trends_explore','crawlora_google_map_search'],example:'Find coffee shops in San Francisco and search for recent coffee industry news.',summary:'Google search, news, videos, Maps, and Trends through Crawlora.'},
+ {slug:'google',version:'2.0.0',sdkVersion:'1.49.0-sdk.4',title:'Google',tools:['crawlora_google_news','crawlora_google_videos','crawlora_google_trends_explore','crawlora_google_map_search'],example:'Find recent coffee industry news and places in San Francisco.',summary:'Google News, Videos, Maps, and Trends through Crawlora.'},
  {slug:'sec',version:'1.0.1',schemaMetadata:true,title:'SEC EDGAR',tools:['crawlora_sec_company_search','crawlora_sec_company_intelligence','crawlora_sec_financials','crawlora_sec_filings','crawlora_sec_filing_sections','crawlora_sec_full_text_search','crawlora_sec_insider'],example:'Resolve AAPL, then get annual financials and recent SEC filings.',summary:'SEC EDGAR company research, financial statements, filings, and insider transactions through Crawlora.'},
  {"slug": "bing", "title": "Bing", "schemaMetadata": true, "tools": ["crawlora_bing_search"], "example": "Search Bing for recent battery recycling research.", "summary": "Bing web search through Crawlora."},
  {"slug": "ebay", "title": "eBay", "schemaMetadata": true, "tools": ["crawlora_ebay_search"], "example": "Find vintage mechanical keyboards on eBay.", "summary": "eBay marketplace listing search through Crawlora."},

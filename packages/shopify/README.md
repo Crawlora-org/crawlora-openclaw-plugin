@@ -91,6 +91,63 @@ These are the exact generated input schemas.
         }
       ],
       "description": "sortBy parameter."
+    },
+    "sort_by": {
+      "anyOf": [
+        {
+          "type": "string",
+          "const": "manual"
+        },
+        {
+          "type": "string",
+          "const": "best-selling"
+        },
+        {
+          "type": "string",
+          "const": "title-ascending"
+        },
+        {
+          "type": "string",
+          "const": "title-descending"
+        },
+        {
+          "type": "string",
+          "const": "price-ascending"
+        },
+        {
+          "type": "string",
+          "const": "price-descending"
+        },
+        {
+          "type": "string",
+          "const": "created-ascending"
+        },
+        {
+          "type": "string",
+          "const": "created-descending"
+        }
+      ],
+      "description": "sort_by parameter."
+    },
+    "min_price": {
+      "type": "number",
+      "description": "min_price parameter."
+    },
+    "max_price": {
+      "type": "number",
+      "description": "max_price parameter."
+    },
+    "product_type": {
+      "type": "string",
+      "description": "product_type parameter."
+    },
+    "in_stock_only": {
+      "type": "boolean",
+      "description": "in_stock_only parameter."
+    },
+    "option_size": {
+      "type": "string",
+      "description": "option_size parameter."
     }
   }
 }

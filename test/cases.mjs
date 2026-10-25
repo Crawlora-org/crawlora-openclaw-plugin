@@ -1,5 +1,4 @@
 export const cases = [
- ['google_search', {q:'coffee & tea',num:10}, 'POST', '/google/search', {keyword:'coffee & tea',country:'us',language:'en',limit:10}],
  ['google_news', {q:'coffee',count:5}, 'GET', '/google/news?q=coffee&count=5'],
  ['google_videos', {q:'coffee',count:5}, 'GET', '/google/videos?q=coffee&count=5'],
  ['bing_search', {q:'coffee',count:5}, 'GET', '/bing/search?q=coffee&count=5'],

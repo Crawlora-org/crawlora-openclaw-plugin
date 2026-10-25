@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/openclaw-plugin",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Crawlora tools for OpenClaw: live structured web search, products, maps, transcripts, finance, and company research.",
   "type": "module",
   "main": "./dist/index.js",
@@ -33,13 +33,13 @@
     "platforms:validate": "node scripts/validate-platforms.mjs"
   },
   "dependencies": {
-    "@crawlora-org/sdk": "1.41.0-sdk.1",
+    "@crawlora-org/sdk": "1.49.0-sdk.4",
     "typebox": "1.3.18"
   },
   "devDependencies": {
+    "@types/node": "^24.0.0",
     "openclaw": "2026.9.3",
-    "typescript": "5.9.3",
-    "@types/node": "^24.0.0"
+    "typescript": "5.9.3"
   },
   "peerDependencies": {
     "openclaw": "2026.9.3"

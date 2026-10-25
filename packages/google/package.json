@@ -1,7 +1,7 @@
 {
   "name": "@crawlora-org/google",
-  "version": "1.0.0",
-  "description": "Google search, news, videos, Maps, and Trends through Crawlora.",
+  "version": "2.0.0",
+  "description": "Google News, Videos, Maps, and Trends through Crawlora.",
   "type": "module",
   "main": "./dist/index.js",
   "files": [
@@ -28,7 +28,7 @@
     "plugin:validate": "openclaw plugins validate --entry ./dist/index.js"
   },
   "dependencies": {
-    "@crawlora-org/sdk": "1.41.0-sdk.1",
+    "@crawlora-org/sdk": "1.49.0-sdk.4",
     "typebox": "1.3.18"
   },
   "devDependencies": {

@@ -14,7 +14,7 @@ const plugin = defineToolPlugin({
       })
     )
   }),
- tools: (tool) => [tool({name:"crawlora_threads_search",description:"Use Crawlora to access public Threads data.",parameters:Type.Object({"q": Type.String({"description":"q parameter."})}),async execute(params,config,context){return callCrawlora(config,context.signal,"threads-search",params as Record<string, unknown>);}})],
+ tools: (tool) => [tool({name:"crawlora_threads_search",description:"Use Crawlora to access public Threads data.",parameters:Type.Object({"q": Type.String({"description":"q parameter."}),"sort": Type.Optional(Type.Union([Type.Literal("top"),Type.Literal("recent")], {"description":"sort parameter."}))}),async execute(params,config,context){return callCrawlora(config,context.signal,"threads-search",params as Record<string, unknown>);}})],
 });
 const register = plugin.register;
 plugin.register = (api) => {

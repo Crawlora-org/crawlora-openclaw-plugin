@@ -2,7 +2,7 @@
   "id": "crawlora-rottentomatoes",
   "name": "Rottentomatoes by Crawlora",
   "description": "Public Rottentomatoes data through Crawlora.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "configSchema": {
     "type": "object",
     "properties": {
