@@ -1,0 +1,26 @@
+{
+  "slug": "rottentomatoes",
+  "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/rottentomatoes",
+  "name": "@crawlora-org/rottentomatoes",
+  "displayName": "Rottentomatoes by Crawlora",
+  "family": "code-plugin",
+  "version": "1.0.1",
+  "files": 8,
+  "totalBytes": 5532,
+  "status": "published",
+  "releaseId": "rd7cxqe7pesbk8vrvy76hdktb58gyygd",
+  "publicationStatus": "published",
+  "attemptId": "zx773dafm58zr6hackd9731r918gyc8h",
+  "commit": "f545d2ace17ff1ba575a38e0990b6d2cae28a04a",
+  "artifactSha256": "e41b55efb091a2abe2a7100323dbfb20d65fb6d677bed32e81ad728d08b9f2fd",
+  "npmIntegrity": "sha512-xbNi7AY8Ech8Xk7LOPwJpYvRzfI6qAhSLL2xdIJL0ChbrFxqFqruKEhHr+VmtU8LTe4B+w15J/OSKe7WHCcVcA==",
+  "registeredToolCount": 1,
+  "validation": {
+    "npmTest": "passed (676 tests)",
+    "pluginValidate": "passed",
+    "platformsValidate": "passed (202 packages)",
+    "ci": "passed",
+    "clawhubScan": "clean",
+    "downloadDigestVerified": true
+  }
+}
