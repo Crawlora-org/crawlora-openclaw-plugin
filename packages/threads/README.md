@@ -61,6 +61,19 @@ These are the exact generated input schemas.
     "q": {
       "type": "string",
       "description": "q parameter."
+    },
+    "sort": {
+      "anyOf": [
+        {
+          "type": "string",
+          "const": "top"
+        },
+        {
+          "type": "string",
+          "const": "recent"
+        }
+      ],
+      "description": "sort parameter."
     }
   }
 }

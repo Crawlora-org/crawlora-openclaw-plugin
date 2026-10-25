@@ -75,7 +75,7 @@ These are the exact generated input schemas.
         },
         {
           "type": "string",
-          "const": "business-intelligence-data-engineering"
+          "const": "business-intelligence"
         },
         {
           "type": "string",
@@ -84,6 +84,10 @@ These are the exact generated input schemas.
         {
           "type": "string",
           "const": "buying-planning-instock-management"
+        },
+        {
+          "type": "string",
+          "const": "corporate-operations"
         },
         {
           "type": "string",
@@ -115,15 +119,19 @@ These are the exact generated input schemas.
         },
         {
           "type": "string",
-          "const": "fgbs"
+          "const": "finance-accounting"
         },
         {
           "type": "string",
-          "const": "fulfillment-center-warehouse-associate"
+          "const": "fulfillment-associate"
         },
         {
           "type": "string",
           "const": "fulfillment-operations-management"
+        },
+        {
+          "type": "string",
+          "const": "fulfillment-warehouse-associate"
         },
         {
           "type": "string",
@@ -147,7 +155,11 @@ These are the exact generated input schemas.
         },
         {
           "type": "string",
-          "const": "marketing"
+          "const": "machine-learning-science"
+        },
+        {
+          "type": "string",
+          "const": "marketing-pr"
         },
         {
           "type": "string",
@@ -156,6 +168,10 @@ These are the exact generated input schemas.
         {
           "type": "string",
           "const": "operations-it-support-engineering"
+        },
+        {
+          "type": "string",
+          "const": "procurement"
         },
         {
           "type": "string",
@@ -171,7 +187,7 @@ These are the exact generated input schemas.
         },
         {
           "type": "string",
-          "const": "public-relations-communications"
+          "const": "public-relations"
         },
         {
           "type": "string",
@@ -187,7 +203,7 @@ These are the exact generated input schemas.
         },
         {
           "type": "string",
-          "const": "solutions-architecture"
+          "const": "solutions-architect"
         },
         {
           "type": "string",

@@ -2,7 +2,7 @@
   "id": "crawlora",
   "name": "Crawlora",
   "description": "Live, structured web data — search engines, marketplaces, finance, maps, media, and trends.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "configSchema": {
     "type": "object",
     "properties": {
@@ -27,7 +27,6 @@
   },
   "contracts": {
     "tools": [
-      "crawlora_google_search",
       "crawlora_google_news",
       "crawlora_google_videos",
       "crawlora_bing_search",

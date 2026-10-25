@@ -1,8 +1,8 @@
 {
   "id": "crawlora-google",
   "name": "Google by Crawlora",
-  "description": "Google search, news, videos, Maps, and Trends through Crawlora.",
-  "version": "1.0.0",
+  "description": "Google News, Videos, Maps, and Trends through Crawlora.",
+  "version": "2.0.0",
   "configSchema": {
     "type": "object",
     "properties": {
@@ -17,7 +17,6 @@
   },
   "contracts": {
     "tools": [
-      "crawlora_google_search",
       "crawlora_google_news",
       "crawlora_google_videos",
       "crawlora_google_trends_explore",

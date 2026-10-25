@@ -34,7 +34,7 @@ export async function callCrawlora(
     baseUrl: "https://api.crawlora.net/api/v1",
     timeout: 60_000,
     retries: 0,
-    userAgent: "crawlora-openclaw-plugin/1.0.0",
+    userAgent: "crawlora-openclaw-plugin/2.0.0",
   });
   try {
     // Wrap domain fields so OpenClaw does not grade a domain `status` as failure.

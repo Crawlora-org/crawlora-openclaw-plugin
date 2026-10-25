@@ -2,7 +2,7 @@
   "id": "crawlora-amazon-jobs",
   "name": "Amazon Jobs by Crawlora",
   "description": "Public Amazon Jobs data through Crawlora.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "configSchema": {
     "type": "object",
     "properties": {

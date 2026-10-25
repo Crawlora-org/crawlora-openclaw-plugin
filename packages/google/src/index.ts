@@ -5,7 +5,7 @@ import { callCrawlora } from "./client.js";
 const plugin = defineToolPlugin({
  id: "crawlora-google",
  name: "Google by Crawlora",
- description: "Google search, news, videos, Maps, and Trends through Crawlora.",
+ description: "Google News, Videos, Maps, and Trends through Crawlora.",
  configSchema: Type.Object({
     apiKey: Type.Optional(
       Type.String({
@@ -15,24 +15,6 @@ const plugin = defineToolPlugin({
     )
   }),
  tools: (tool) => [tool({
-      name: "crawlora_google_search",
-      description: "Search Google and return organic results.",
-      parameters: Type.Object({
-        q: Type.String({ description: "Search query." }),
-        num: Type.Optional(Type.Integer({ minimum: 10, maximum: 100, description: "Number of results (10-100)." }))
-      }),
-      async execute(params, config, context) {
-        return callCrawlora(config, context.signal, "google-search", {
-          searchOption: {
-            keyword: params.q,
-            country: "us",
-            language: "en",
-            ...(params.num === undefined ? {} : { limit: params.num })
-          }
-        });
-      }
-    }),
-tool({
       name: "crawlora_google_news",
       description: "Search Google News and return news results.",
       parameters: Type.Object({

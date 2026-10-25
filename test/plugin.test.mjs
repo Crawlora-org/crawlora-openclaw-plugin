@@ -20,7 +20,7 @@ function checkUrl(actual, expected) {
 
 test('every registered tool has a request contract test and unique metadata', () => {
  const metadata=getToolPluginMetadata(plugin);
- assert.equal(metadata.tools.length,23);
+ assert.equal(metadata.tools.length,22);
  const rootCases=cases.filter(x=>metadata.tools.some(tool=>tool.name==='crawlora_'+x[0]));
  assert.deepEqual([...tools().keys()].sort(),rootCases.map(x=>'crawlora_'+x[0]).sort());
  assert.deepEqual(metadata.tools.map(x=>x.name).sort(),[...tools().keys()].sort());
@@ -61,7 +61,7 @@ test('environment key fallback and missing key fail before network access',async
 });
 test('rejects invalid number and enum values through declared schemas',()=>{
  const list=tools();
- for (const [name,params] of [['google_search',{q:'x',num:1}],['bing_search',{q:'x',count:1.5}],['sec_financials',{ticker:'AAPL',statement:'invalid'}],['jobs_hiring_signals',{provider:'invalid'}]]) {
+ for (const [name,params] of [['google_news',{q:'x',count:1.5}],['bing_search',{q:'x',count:1.5}],['sec_financials',{ticker:'AAPL',statement:'invalid'}],['jobs_hiring_signals',{provider:'invalid'}]]) {
   assert.equal(Value.Check(list.get('crawlora_'+name).parameters,params),false);
  }
 });

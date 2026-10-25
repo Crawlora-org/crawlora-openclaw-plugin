@@ -2,7 +2,7 @@
   "id": "crawlora-threads",
   "name": "Threads by Crawlora",
   "description": "Public Threads data through Crawlora.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "configSchema": {
     "type": "object",
     "properties": {

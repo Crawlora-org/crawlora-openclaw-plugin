@@ -1,6 +1,6 @@
 # Google by Crawlora
 
-Google search, news, videos, Maps, and Trends through Crawlora. Live check on 2026-09-10: Google News succeeded; organic search returned upstream HTTP 503 on two queries. Organic search availability is currently limited. This package exposes 5 curated tools. It is an independent Crawlora integration, not an official Google or OpenClaw product.
+Google News, Videos, Maps, and Trends through Crawlora. This package exposes 4 curated tools. It is an independent Crawlora integration, not an official Google or OpenClaw product.
 
 ## Install
 
@@ -37,13 +37,12 @@ openclaw plugins inspect crawlora-google --runtime --json
 
 ## Example
 
-“Find coffee shops in San Francisco and search for recent coffee industry news.”
+“Find recent coffee industry news and places in San Francisco.”
 
 ## Tools
 
 | Tool | Purpose |
 | --- | --- |
-| `crawlora_google_search` | Search Google and return organic results. |
 | `crawlora_google_news` | Search Google News and return news results. |
 | `crawlora_google_videos` | Search Google Videos and return video results. |
 | `crawlora_google_trends_explore` | Explore Google Trends interest for a query. |
@@ -52,29 +51,6 @@ openclaw plugins inspect crawlora-google --runtime --json
 ## Parameters
 
 These are the exact generated input schemas.
-
-### crawlora_google_search
-
-```json
-{
-  "type": "object",
-  "required": [
-    "q"
-  ],
-  "properties": {
-    "q": {
-      "type": "string",
-      "description": "Search query."
-    },
-    "num": {
-      "type": "integer",
-      "minimum": 10,
-      "maximum": 100,
-      "description": "Number of results (10-100)."
-    }
-  }
-}
-```
 
 ### crawlora_google_news
 
