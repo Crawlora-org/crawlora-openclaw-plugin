@@ -1,0 +1,26 @@
+{
+  "slug": "google",
+  "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/google",
+  "name": "@crawlora-org/google",
+  "displayName": "Google by Crawlora",
+  "family": "code-plugin",
+  "version": "2.0.0",
+  "files": 8,
+  "totalBytes": 4755,
+  "status": "published",
+  "releaseId": "rd7fw6tak9ph8jnhsymvggesd58gz7a8",
+  "publicationStatus": "published",
+  "attemptId": "zx74cz1ghzvdj8h4hb4rkzbfg58gy37w",
+  "commit": "f545d2ace17ff1ba575a38e0990b6d2cae28a04a",
+  "artifactSha256": "2a7507d0936f92f3793bcbf0d2ffe5583957ec539dc50c4b2a5ac5ba1f2f78d1",
+  "npmIntegrity": "sha512-lohrmaT1EH87XWboiH2MSXJ6YhdIXA5fqhXp6bBlqT29cCdDX+nGb6J29mYyc/G7ufn6MI5DbZl8WJLh7ivviw==",
+  "registeredToolCount": 4,
+  "validation": {
+    "npmTest": "passed (676 tests)",
+    "pluginValidate": "passed",
+    "platformsValidate": "passed (202 packages)",
+    "ci": "passed",
+    "clawhubScan": "clean",
+    "downloadDigestVerified": true
+  }
+}

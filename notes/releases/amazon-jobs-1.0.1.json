@@ -1,0 +1,26 @@
+{
+  "slug": "amazon-jobs",
+  "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/amazon-jobs",
+  "name": "@crawlora-org/amazon-jobs",
+  "displayName": "Amazon Jobs by Crawlora",
+  "family": "code-plugin",
+  "version": "1.0.1",
+  "files": 8,
+  "totalBytes": 5274,
+  "status": "published",
+  "releaseId": "rd743dcfpdd9vgxpedyv4b30m58gzt4j",
+  "publicationStatus": "published",
+  "attemptId": "zx7cwcegp5rc14tc9da4b5fz0n8gze89",
+  "commit": "f545d2ace17ff1ba575a38e0990b6d2cae28a04a",
+  "artifactSha256": "c93e48e7a5723ca07a24849a61649a58625606c0ad640e871cb18a92e77c0cdd",
+  "npmIntegrity": "sha512-gF4hXEgwzRmKbXmc2hXfZgoSOT02PM9T17OCERbmuHe95ZDudMpBVckAqh1AxZZycdVN3BxdC76cd3SoUm2G1w==",
+  "registeredToolCount": 1,
+  "validation": {
+    "npmTest": "passed (676 tests)",
+    "pluginValidate": "passed",
+    "platformsValidate": "passed (202 packages)",
+    "ci": "passed",
+    "clawhubScan": "clean",
+    "downloadDigestVerified": true
+  }
+}

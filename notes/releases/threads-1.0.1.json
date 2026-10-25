@@ -1,0 +1,26 @@
+{
+  "slug": "threads",
+  "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/threads",
+  "name": "@crawlora-org/threads",
+  "displayName": "Threads by Crawlora",
+  "family": "code-plugin",
+  "version": "1.0.1",
+  "files": 8,
+  "totalBytes": 4463,
+  "status": "published",
+  "releaseId": "rd736bqcv6cm6kp40ge8mcg28s8gzaan",
+  "publicationStatus": "published",
+  "attemptId": "zx74gwf4wfy0gaqqrpk38y1zhh8gyd28",
+  "commit": "f545d2ace17ff1ba575a38e0990b6d2cae28a04a",
+  "artifactSha256": "7513376ce0fa9f5a00a536e6226ac0eab83afb11f35039e92ac5eba10a8a2cdf",
+  "npmIntegrity": "sha512-GEfhRh9ryW/mYvPruDQXUmXP/ssjuDF/+SFRmpLIUV116g98vNkVVOUWv4bvbPc6zxhG72J1hl+r+M3Absb9xg==",
+  "registeredToolCount": 1,
+  "validation": {
+    "npmTest": "passed (676 tests)",
+    "pluginValidate": "passed",
+    "platformsValidate": "passed (202 packages)",
+    "ci": "passed",
+    "clawhubScan": "clean",
+    "downloadDigestVerified": true
+  }
+}

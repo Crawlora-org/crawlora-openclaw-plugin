@@ -1,0 +1,26 @@
+{
+  "slug": "shopify",
+  "source": "github:Crawlora-org/crawlora-openclaw-plugin@main:packages/shopify",
+  "name": "@crawlora-org/shopify",
+  "displayName": "Shopify by Crawlora",
+  "family": "code-plugin",
+  "version": "1.0.1",
+  "files": 8,
+  "totalBytes": 4857,
+  "status": "published",
+  "releaseId": "rd73jmgdsv8abq85kc05rmh3qh8gyngz",
+  "publicationStatus": "published",
+  "attemptId": "zx7ay0kgsn4x0jqjghn9da4a818gzsq0",
+  "commit": "f545d2ace17ff1ba575a38e0990b6d2cae28a04a",
+  "artifactSha256": "8ee9426766974bd1b7f995049ec50ce6f418c9ea54e6bc1c7a49244531333737",
+  "npmIntegrity": "sha512-SScUDB8AIs31VU5OhPasjgqP3Xh7oN7VFXnXZXFC2rzXlugr0xYvudEaxi+NCMi1rJHlQ6fNcQXQLNKCMU0e1Q==",
+  "registeredToolCount": 1,
+  "validation": {
+    "npmTest": "passed (676 tests)",
+    "pluginValidate": "passed",
+    "platformsValidate": "passed (202 packages)",
+    "ci": "passed",
+    "clawhubScan": "clean",
+    "downloadDigestVerified": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "openclaw-plugin",
+  "source": "github:Crawlora-org/crawlora-openclaw-plugin@main",
+  "name": "@crawlora-org/openclaw-plugin",
+  "displayName": "Crawlora",
+  "family": "code-plugin",
+  "version": "2.0.0",
+  "files": 8,
+  "totalBytes": 9019,
+  "status": "published",
+  "releaseId": "rd72211azdnkfd5jqh6b9h76k58gzgqt",
+  "publicationStatus": "published",
+  "attemptId": "zx7241p5ddzh3me78dyy1fmq4h8gyhmn",
+  "commit": "f545d2ace17ff1ba575a38e0990b6d2cae28a04a",
+  "artifactSha256": "0b528d5bb45cf4e0de531e948165eeba1b148cd21f1e9030583603a49780a563",
+  "npmIntegrity": "sha512-RiynmLx6L5Nxfq68a0c3V6uPymQbx2/uFTgQ0wi7xaqKTUiIackXpWdv99D464SsPk2jEb4mHSj4yyZY44GU1A==",
+  "registeredToolCount": 22,
+  "validation": {
+    "npmTest": "passed (676 tests)",
+    "pluginValidate": "passed",
+    "platformsValidate": "passed (202 packages)",
+    "ci": "passed",
+    "clawhubScan": "clean",
+    "downloadDigestVerified": true
+  }
+}
